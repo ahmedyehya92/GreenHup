@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".features.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/oval_gradient_vertical"
+                android:elevation="15dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/space">
+
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_backspace_white_24dp" />
+
+
+        </LinearLayout>
+
+        <com.github.florent37.arclayout.ArcLayout
+                android:id="@+id/arcLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:elevation="5dp"
+                app:arc_cropDirection="cropOutside"
+                app:arc_height="50dp"
+                app:arc_position="bottom"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/very_light_pink"
+                    android:scaleType="centerCrop" />
+
+
+        </com.github.florent37.arclayout.ArcLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.45" />
+
+
+
+        <Space
+                android:id="@+id/space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="@+id/arcLayout"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <Space
+                android:id="@+id/space2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="@+id/arcLayout"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/oval_gradient_vertical"
+                android:elevation="15dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/arcLayout"
+                app:layout_constraintTop_toTopOf="@+id/space2">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rotation="180"
+                    android:src="@drawable/ic_keyboard_backspace_white_24dp" />
+
+        </LinearLayout>
+
+        <com.am_development.greenhup.customviews.CustomeFontTextView
+                android:id="@+id/customeFontTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Explore More"
+                app:custom_font="@string/font_raleway_bold"
+                android:textColor="@color/dark_blue_grey"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arcLayout" />
+
+        <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_rectangle_gray_radius_22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/customeFontTextView">
+
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Search"
+                    android:textColorHint="@color/mossy_green"
+
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_search_green_24dp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                tools:listitem="@layout/item_home_horizontal_list"
+
+                />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

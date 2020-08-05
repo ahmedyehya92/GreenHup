@@ -4,6 +4,7 @@
     <string name="font_name_helvatica">Helvetica</string>
     <string name="fon_Helvetica_Oblique">Helvetica-Oblique</string>
     <string name="font_raleway_medium">Raleway-Medium</string>
+    <string name="font_raleway_bold">Raleway-Bold</string>
     <string name="font_hkgrotesk_semibold">HKGrotesk-SemiBold</string>
     <string name="menu_item_search_event">Search Event</string>
     <string name="menu_item_go_backend">Go Backend</string>

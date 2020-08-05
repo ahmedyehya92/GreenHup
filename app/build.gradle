@@ -55,6 +55,7 @@ dependencies {
 
     implementation 'com.otaliastudios:zoomlayout:1.6.0'
 
+    implementation 'com.github.florent37:arclayout:1.0.5'
 
     testImplementation 'androidx.arch.core:core-testing:2.0.0', {
         exclude group: 'com.android.support', module: 'support-compat'
