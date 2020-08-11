@@ -1,4 +1,4 @@
-package com.am_development.greenhup.features.categories
+package com.am_development.greenhup.features.categories_vendor
 
 import android.content.Context
 import android.view.LayoutInflater

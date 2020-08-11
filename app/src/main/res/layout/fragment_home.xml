@@ -49,7 +49,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/very_light_pink"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop" >
+
+                <androidx.viewpager.widget.ViewPager
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/page_slider"
+                        />
+
+            </LinearLayout>
 
 
         </com.github.florent37.arclayout.ArcLayout>
@@ -145,6 +153,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_plants_horizontal_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"

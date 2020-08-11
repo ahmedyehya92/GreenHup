@@ -15,20 +15,22 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name="com.am_development.greenhup.features.main.MainActivity">
+        <activity android:name=".features.services.ServicesActivity"></activity>
+        <activity
+                android:name=".features.categories_vendor.vendors.VendorsActivity"
+                android:exported="true" />
+        <activity
+                android:name=".features.categories_vendor.CategoriesActivity"
+                android:exported="true" />
+        <activity android:name=".features.details.DetailsActivity" />
+        <activity android:name=".features.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.splash.SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".features.main.MainActivity" />
     </application>
 
 </manifest>

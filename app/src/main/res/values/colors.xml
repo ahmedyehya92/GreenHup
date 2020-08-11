@@ -17,5 +17,9 @@
     <color name="shamrock_green">#00c569</color>
     <color name="frog_green">#46c210</color>
     <color name="dark_blue_grey">#0b0e26</color>
+    <color name="brown_grey">#929292</color>
+    <color name="dark">#1b203b</color>
+    <color name="teal">#05986a</color>
+    <color name="very_light_pink_two">#f2f2f2</color>
 
 </resources>

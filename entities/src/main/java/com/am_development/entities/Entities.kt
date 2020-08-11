@@ -45,6 +45,12 @@ data class CartItem(
     @field:SerializedName("max_quantity") var maxQuantity: Int
 )
 
+data class ItemNovigtionMenu(
+    var isSelected: Boolean,
+    val title: String,
+    val iconResourceId: Int? = null
+)
+
 data class ServiceItem(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,

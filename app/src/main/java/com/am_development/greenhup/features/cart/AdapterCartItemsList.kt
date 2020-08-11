@@ -13,7 +13,7 @@ import com.am_development.entities.LOADING
 import com.am_development.greenhup.R
 import com.am_development.greenhup.core.PaginationAdapterCallBack
 import com.am_development.greenhup.customviews.CustomeFontTextView
-import com.am_development.greenhup.features.categories.AdapterPlants
+import com.am_development.greenhup.features.categories_vendor.AdapterPlants
 import com.bumptech.glide.Glide
 import com.wang.avi.AVLoadingIndicatorView
 
@@ -107,6 +107,7 @@ class AdapterCartItemsList (
 
                 cartViewHolder.tv_name?.text = model.name
                 model.totalPrice = model.unitPrice*model.quantity
+                cartViewHolder.tv_quantity.text = model.quantity.toString()
                 cartViewHolder.tv_price?.text = model.totalPrice.toString()
                 cartViewHolder.btn_add!!.setOnClickListener {
                     if(model.quantity+1 <= model.maxQuantity) {
@@ -162,6 +163,7 @@ class AdapterCartItemsList (
         val tv_price by lazy { itemView.findViewById<CustomeFontTextView>(R.id.tv_total_price) }
         val btn_add by lazy { itemView.findViewById<ImageView>(R.id.btn_add) }
         val btn_remove by lazy { itemView.findViewById<ImageView>(R.id.btn_remove) }
+        val tv_quantity  by lazy { itemView.findViewById<CustomeFontTextView>(R.id.tv_quantity) }
     }
 
     inner class LoadingVH(itemView: View) :
@@ -169,6 +171,7 @@ class AdapterCartItemsList (
         val mProgressBar by lazy { itemView.findViewById<AVLoadingIndicatorView>(R.id.avi_loading_more) }
         val mRetryBtn by lazy { itemView.findViewById<LinearLayout>(R.id.btn_try_again) }
         val footerLayout by lazy { itemView.findViewById<LinearLayout>(R.id.loadmore_errorlayout) }
+
     }
     init {
         this.cartList = cartList

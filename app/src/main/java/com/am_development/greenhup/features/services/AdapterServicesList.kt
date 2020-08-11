@@ -13,7 +13,7 @@ import com.am_development.entities.ServiceItem
 import com.am_development.greenhup.R
 import com.am_development.greenhup.core.PaginationAdapterCallBack
 import com.am_development.greenhup.customviews.CustomeFontTextView
-import com.am_development.greenhup.features.categories.AdapterPlants
+import com.am_development.greenhup.features.categories_vendor.AdapterPlants
 import com.bumptech.glide.Glide
 import com.wang.avi.AVLoadingIndicatorView
 

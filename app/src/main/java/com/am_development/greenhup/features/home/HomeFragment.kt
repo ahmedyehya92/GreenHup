@@ -1,12 +1,16 @@
 package com.am_development.greenhup.features.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.am_development.entities.Plant
 
 import com.am_development.greenhup.R
+import com.am_development.greenhup.features.details.DetailsActivity
+import kotlinx.android.synthetic.main.fragment_home.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,10 +22,13 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButtonListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val plantsHorizontalList: MutableList<Plant> = ArrayList()
+    var adapterHorizontalPlantsList: AdapterHorizontalPlantsList?= null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +44,19 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val plantsList: MutableList<Plant> = ArrayList()
+        plantsList.add(Plant("1","INDOOR", "Groom", "500", "https://h7h9j4n8.stackpathcdn.com/wp-content/uploads/2014/07/Classiс-plant-transparent.png"))
+        plantsList.add(Plant("1","INDOOR", "Groom", "500", "https://h7h9j4n8.stackpathcdn.com/wp-content/uploads/2014/07/Classiс-plant-transparent.png"))
+        plantsList.add(Plant("1","INDOOR", "Groom", "500", "https://h7h9j4n8.stackpathcdn.com/wp-content/uploads/2014/07/Classiс-plant-transparent.png"))
+        adapterHorizontalPlantsList= AdapterHorizontalPlantsList(context!!,plantsHorizontalList)
+        adapterHorizontalPlantsList?.setCustomButtonListner(this)
+        addItemsToGallery(plantsList)
+        rv_plants_horizontal_list.adapter= adapterHorizontalPlantsList
+        addItemsToHorizontalList(plantsList)
+        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {
@@ -57,5 +77,20 @@ class HomeFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun addItemsToGallery(plantsList: MutableList<Plant>) {
+        page_slider.offscreenPageLimit = 5
+        val sliderGalleryAdapter = AdapterHeaderGallery(plantsList, context!!)
+
+        page_slider.adapter = sliderGalleryAdapter
+    }
+
+    override fun addItemsToHorizontalList(plantsList: MutableList<Plant>) {
+        adapterHorizontalPlantsList?.addAll(plantsList)
+    }
+
+    override fun onItemHorizontalListClickListener(plant: Plant) {
+        startActivity(Intent(activity, DetailsActivity::class.java))
     }
 }
