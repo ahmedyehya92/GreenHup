@@ -9,13 +9,20 @@
     <application
             android:name=".AfconApp"
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/logo"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@drawable/logo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".features.services.ServicesActivity"></activity>
+        <activity android:name=".features.package_details.PackageDetailsActivity"
+                android:exported="true"
+                ></activity>
+        <activity android:name=".features.search.SearchActivity" />
+        <activity android:name=".features.sign.SignActivity" />
+        <activity android:name=".features.on_boarding.OnBoardingActivity" />
+        <activity android:name=".features.service_details.ServiceDetailsActivity" />
+        <activity android:name=".features.services.ServicesActivity" />
         <activity
                 android:name=".features.categories_vendor.vendors.VendorsActivity"
                 android:exported="true" />

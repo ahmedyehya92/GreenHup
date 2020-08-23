@@ -1,6 +1,7 @@
 package com.am_development.greenhup.features.home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.am_development.entities.Plant
 import com.am_development.greenhup.R
+import com.am_development.greenhup.features.details.DetailsActivity
 import com.bumptech.glide.Glide
 
 class AdapterHeaderGallery (
@@ -27,7 +29,7 @@ class AdapterHeaderGallery (
             .into(im_slider)
 
         im_slider.setOnClickListener {
-
+            context.startActivity(Intent(context, DetailsActivity::class.java))
         }
 
         container.addView(view)

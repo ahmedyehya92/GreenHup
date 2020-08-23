@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="4dp"
+        tools:context=".features.login.LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+            <com.am_development.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome,"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    app:custom_font="@string/font_name_sfpro_display_bold"
+                    />
+
+
+        </LinearLayout>
+
+
+        <com.am_development.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in to Continue"
+                android:textColor="@color/brown_grey"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.am_development.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.am_development.greenhup.customviews.CustomEditTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.am_development.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.am_development.greenhup.customviews.CustomEditTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.am_development.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password?"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+
+        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:custom_font="@string/font_name_hkgrotesk_bold"
+                app:backgroundTint="@color/mossy_green"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                app:cornerRadius="6dp"
+                android:text="SIGN IN"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

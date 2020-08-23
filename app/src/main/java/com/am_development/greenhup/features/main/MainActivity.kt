@@ -11,7 +11,9 @@ import com.am_development.greenhup.R
 import com.am_development.greenhup.features.categories_vendor.CategoriesActivity
 import com.am_development.greenhup.features.categories_vendor.vendors.VendorsActivity
 import com.am_development.greenhup.features.services.ServicesActivity
+import com.am_development.greenhup.features.sign.SignActivity
 import com.am_development.greenhup.features.splash.SplashActivity
+import com.am_development.usecases.usecases.TokenUseCase
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_slide_menu.*
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
 
     var adapterSlideMenuList: AdapterSlideMenu? = null
     val menuItemsListNav: ArrayList<ItemNovigtionMenu> = ArrayList()
+    val tokenUseCase = TokenUseCase()
     private var drawerToggle: ActionBarDrawerToggle? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +30,27 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
         setupViewPager()
         setupActionBar()
         setupSlideMenu()
+        checkLoginStatus()
 
 
+
+
+    }
+
+    private fun checkLoginStatus() {
+        if(tokenUseCase.isLoggedIn)
+        {
+
+        } else {
+            lout_btn_logout.visibility= View.GONE
+            tv_status_indicator.text= getString(R.string.login)
+            tv_status_indicator.setOnClickListener {
+                if(!tokenUseCase.isLoggedIn) {
+                    drawer_layout.closeDrawers()
+                    startActivity(Intent(this, SignActivity::class.java))
+                }
+            }
+        }
     }
 
     fun setupActionBar() {

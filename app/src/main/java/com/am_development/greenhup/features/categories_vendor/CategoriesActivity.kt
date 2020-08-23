@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.am_development.entities.Category
 import com.am_development.entities.Plant
 import com.am_development.greenhup.R
+import com.am_development.greenhup.features.search.SearchActivity
 import kotlinx.android.synthetic.main.activity_categories.*
 
 class CategoriesActivity : AppCompatActivity(), CategoriesView, AdapterCategoriesList.customButtonListener {
@@ -15,6 +16,11 @@ class CategoriesActivity : AppCompatActivity(), CategoriesView, AdapterCategorie
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categories)
+
+
+        btn_search.setOnClickListener {
+            startActivity(SearchActivity.instantiateIntent(this, et_search_query.text.toString()))
+        }
 
         adapterCategories= AdapterCategoriesList(this, categoriesList)
         adapterCategories?.setCustomButtonListner(this)
@@ -44,5 +50,6 @@ class CategoriesActivity : AppCompatActivity(), CategoriesView, AdapterCategorie
     }
 
     override fun omItemPlantClickListener(plant: Plant) {
+
     }
 }

@@ -10,6 +10,7 @@ import com.am_development.entities.Plant
 
 import com.am_development.greenhup.R
 import com.am_development.greenhup.features.details.DetailsActivity
+import com.am_development.greenhup.features.search.SearchActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,6 +48,11 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btn_search.setOnClickListener {
+            startActivity(SearchActivity.instantiateIntent(context!!, et_search_query.text.toString()))
+        }
+
+
         val plantsList: MutableList<Plant> = ArrayList()
         plantsList.add(Plant("1","INDOOR", "Groom", "500", "https://h7h9j4n8.stackpathcdn.com/wp-content/uploads/2014/07/Classiс-plant-transparent.png"))
         plantsList.add(Plant("1","INDOOR", "Groom", "500", "https://h7h9j4n8.stackpathcdn.com/wp-content/uploads/2014/07/Classiс-plant-transparent.png"))

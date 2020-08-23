@@ -1,9 +1,11 @@
 package com.am_development.greenhup.features.services
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.am_development.entities.ServiceItem
 import com.am_development.greenhup.R
+import com.am_development.greenhup.features.service_details.ServiceDetailsActivity
 import kotlinx.android.synthetic.main.activity_services.*
 
 class ServicesActivity : AppCompatActivity(), ServicesView, AdapterServicesList.customButtonListener {
@@ -15,6 +17,7 @@ class ServicesActivity : AppCompatActivity(), ServicesView, AdapterServicesList.
         setContentView(R.layout.activity_services)
 
         adapterServicesList = AdapterServicesList(this, servicesList)
+        adapterServicesList?.setCustomButtonListner(this)
         rv_services.adapter= adapterServicesList
 
         val servList: MutableList<ServiceItem> = ArrayList()
@@ -32,6 +35,6 @@ class ServicesActivity : AppCompatActivity(), ServicesView, AdapterServicesList.
     }
 
     override fun onItemServiceClickListener(plant: ServiceItem) {
-
+        startActivity(Intent(this, ServiceDetailsActivity::class.java))
     }
 }

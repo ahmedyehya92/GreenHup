@@ -6,6 +6,7 @@ import com.am_development.entities.Category
 import com.am_development.entities.Plant
 import com.am_development.greenhup.R
 import com.am_development.greenhup.features.categories_vendor.AdapterCategoriesList
+import com.am_development.greenhup.features.search.SearchActivity
 import kotlinx.android.synthetic.main.activity_vendors.*
 
 class VendorsActivity : AppCompatActivity(), VendorsView, AdapterCategoriesList.customButtonListener {
@@ -16,6 +17,10 @@ class VendorsActivity : AppCompatActivity(), VendorsView, AdapterCategoriesList.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vendors)
+
+        btn_search.setOnClickListener {
+            startActivity(SearchActivity.instantiateIntent(this, et_search_query.text.toString()))
+        }
 
         adapterVendors= AdapterCategoriesList(this, vendorsList)
         adapterVendors?.setCustomButtonListner(this)

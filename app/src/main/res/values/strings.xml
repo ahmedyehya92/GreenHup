@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">CAF</string>
+    <string name="app_name">GreenHub</string>
 
     <string name="font_name_helvatica">Helvetica</string>
     <string name="fon_Helvetica_Oblique">Helvetica-Oblique</string>
     <string name="font_raleway_medium">Raleway-Medium</string>
+    <string name="font_muli">Muli</string>
+    <string name="font_muli_bold">Muli-Bold</string>
     <string name="font_raleway_bold">Raleway-Bold</string>
     <string name="font_hkgrotesk_semibold">HKGrotesk-SemiBold</string>
     <string name="menu_item_search_event">Search Event</string>
@@ -29,9 +31,11 @@
     <string name="backend_url">http://caf-event.netservex.com/web/admin/</string>
     <string name="font_name_sfpro_display_bold">SFProDisplay-Bold</string>
     <string name="font_name_circular_std_book">Circular-Std-Book</string>
+    <string name="font_name_segoe_ui">Segoe-UI</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="version_name">0.0.1</string>
     <string name="drawer_open">drawer open</string>
     <string name="drawer_close">drawer close</string>
+    <string name="login">Login</string>
 </resources>
