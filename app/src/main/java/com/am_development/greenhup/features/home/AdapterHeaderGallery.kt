@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.am_development.entities.Plant
+import com.am_development.entities.SliderItem
 import com.am_development.greenhup.R
 import com.am_development.greenhup.features.details.DetailsActivity
 import com.bumptech.glide.Glide
 
 class AdapterHeaderGallery (
-    private val plantsList: MutableList<Plant>,
+    private val plantsList: MutableList<SliderItem>,
     private val context: Context
 ): PagerAdapter()
 {

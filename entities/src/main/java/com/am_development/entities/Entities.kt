@@ -3,6 +3,7 @@ package com.am_development.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class LoginFields(
     val username: String,
@@ -13,6 +14,21 @@ data class LoginResponse(
     @field:SerializedName("token") val token:String
 )
 
+data class ResponseLogin(
+    val user: User?,
+    val access_token: String
+)
+
+data class User (
+    val code: String?,
+    val id: String?,
+    val name: String?,
+    val email: String?,
+    val phone: String?,
+    val usertype: String,
+    val msg: String?
+)
+
 
 data class Response<T>(
     val message: String,
@@ -21,18 +37,45 @@ data class Response<T>(
     val status_code: Int
 )
 
+
+data class MPackage (
+    @field:SerializedName("id") val id: String,
+    @field:SerializedName("name") val name: String,
+    @field:SerializedName("price") val price: String,
+    @field:SerializedName("image") val imageUrl: String,
+    @field:SerializedName("products") val plantsList: MutableList<Plant>
+): Serializable
+
 data class Plant(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("position") val position: String,
     @field:SerializedName("name") val name: String,
     @field:SerializedName("price") val price: String,
-    @field:SerializedName("image") val imageUrl: String
-    )
+    @field:SerializedName("image") val imageUrl: String,
+    @field:SerializedName("specs") val specifications: MutableList<Specification>?= null,
+    @field:SerializedName("gallery") val gallery: MutableList<SliderItem>?= null,
+    @field:SerializedName("reviews") val reviews: String?= null,
+    @field:SerializedName("intro") val intro: String?= null,
+    @field:SerializedName("addedtocart") val addedtocart: Boolean= false,
+    @field:SerializedName("category") val categoryName: String?= null,
+    @field:SerializedName("offer_start_timestamp") val offerStartAt: String?= null,
+    @field:SerializedName("offer_end_timestamp") val offerEndAt: String? = null,
+    @field:SerializedName("discount_percentage") val discountPercentage: String? =null,
+    @field:SerializedName("details") val details: String?= null
+    ): Serializable
+
+
+data class Specification(
+    @field:SerializedName("spec_name") val specName: String,
+    @field:SerializedName("value") val value: String
+)
+
+
 
 data class Category(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,
-    @field:SerializedName("plants") val plantsList: MutableList<Plant>
+    @field:SerializedName("plants") var plantsList: MutableList<Plant>
 )
 
 data class CartItem(
@@ -45,17 +88,42 @@ data class CartItem(
     @field:SerializedName("max_quantity") var maxQuantity: Int
 )
 
+data class ResponseHome(
+    val home: Home
+)
+
+data class Home(
+    val slider: MutableList<SliderItem>,
+    val featured: MutableList<Plant>,
+    val packages: MutableList<MPackage>,
+    val mainoffer: MutableList<Plant>
+
+)
+
+
+
+data class SliderItem(
+    val id: String,
+    val title: String,
+    val imageUrl: String
+)
+
 data class ItemNovigtionMenu(
     var isSelected: Boolean,
     val title: String,
     val iconResourceId: Int? = null
 )
 
+data class ResponseServices(
+    @field:SerializedName("services") val services: MutableList<ServiceItem>
+)
+
 data class ServiceItem(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,
-    @field:SerializedName("price") val price: String,
-    @field:SerializedName("image") val imageUrl: String
+    @field:SerializedName("image") val imageUrl: String,
+    @field:SerializedName("intro") val intro: String,
+    @field:SerializedName("price") val price: String= "200"
 )
 
 

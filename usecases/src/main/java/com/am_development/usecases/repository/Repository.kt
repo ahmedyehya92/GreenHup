@@ -11,7 +11,7 @@ import retrofit2.Call
 val repository: Repository by lazy { RepositoryImplementer() }
 
 interface Repository {
-    fun login (email: String, password: String): Single<LoginResponse>
+    fun login (email: String, password: String): Single<ResponseLogin>
     fun getTokenHeader(refreshToken: String): Call<LoginResponse>
     fun setLoggedInStatus(status:Boolean)
     fun getLoggedInStatus(): Boolean
@@ -23,6 +23,8 @@ interface Repository {
     fun getPassword(): String
     fun getRefreshToken(): String
     fun setRefreshToken(refreshToken: String)
+    fun home():Single<ResponseHome>
+    fun services(): Single<ResponseServices>
 }
 
 class RepositoryImplementer (
@@ -34,6 +36,9 @@ class RepositoryImplementer (
     override fun setRefreshToken(refreshToken: String) {
         preferencesHelper.refreshToken = refreshToken
     }
+
+    override fun home(): Single<ResponseHome> = server.home()
+    override fun services(): Single<ResponseServices> = server.services()
 
     override fun getRefreshToken(): String {
         return preferencesHelper.refreshToken
@@ -73,7 +78,7 @@ class RepositoryImplementer (
         preferencesHelper.isLoggedIn = status
     }
 
-    override fun login(email: String, password: String) = server.login(LoginFields(email, password))
+    override fun login(email: String, password: String) = server.login(email, password)
 
 
 

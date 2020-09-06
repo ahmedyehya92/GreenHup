@@ -3,6 +3,7 @@ package com.am_development.usecases.usecases
 import android.annotation.SuppressLint
 import android.util.Log
 import com.am_development.entities.LoginResponse
+import com.am_development.entities.ResponseLogin
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -30,7 +31,7 @@ abstract class TokenHelper (private val tokenUseCase: TokenUseCase = TokenUseCas
 
     }
 
-    private fun handleLoginResponse(response: LoginResponse)
+    private fun handleLoginResponse(response: ResponseLogin)
     {
         /* when(response.status)
          {
@@ -43,7 +44,7 @@ abstract class TokenHelper (private val tokenUseCase: TokenUseCase = TokenUseCas
 
 
 
-        tokenUseCase.token = response.token
+        tokenUseCase.token = response.access_token
 
         Log.i("", "token: " + tokenUseCase.token )
 

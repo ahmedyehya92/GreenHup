@@ -12,6 +12,12 @@ class ServicesActivity : AppCompatActivity(), ServicesView, AdapterServicesList.
 
     var adapterServicesList: AdapterServicesList?= null
     val servicesList: MutableList<ServiceItem> = ArrayList()
+
+    private val presenter: ServicesPresenter by lazy {
+        ServicesImplPresenter(this)
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_services)
@@ -20,18 +26,24 @@ class ServicesActivity : AppCompatActivity(), ServicesView, AdapterServicesList.
         adapterServicesList?.setCustomButtonListner(this)
         rv_services.adapter= adapterServicesList
 
-        val servList: MutableList<ServiceItem> = ArrayList()
-
-        servList.add(ServiceItem("1","Garden Design", "500", "https://www.pranayama-garden.com/fileadmin/pranayamagarden-v2/public/img/intro-background-pranayama-garden-01.jpg"))
-        servList.add(ServiceItem("1","Garden Design", "500", "https://www.pranayama-garden.com/fileadmin/pranayamagarden-v2/public/img/intro-background-pranayama-garden-01.jpg"))
-        servList.add(ServiceItem("1","Garden Design", "500", "https://www.pranayama-garden.com/fileadmin/pranayamagarden-v2/public/img/intro-background-pranayama-garden-01.jpg"))
-        servList.add(ServiceItem("1","Garden Design", "500", "https://www.pranayama-garden.com/fileadmin/pranayamagarden-v2/public/img/intro-background-pranayama-garden-01.jpg"))
-
-        addServices(servList)
+        presenter.getServices()
     }
 
     override fun addServices(servicesList: MutableList<ServiceItem>) {
         adapterServicesList?.addAll(servicesList)
+    }
+
+    override fun showLoading() {
+
+    }
+
+    override fun finishLoading() {
+    }
+
+    override fun connectionError(message: String?) {
+    }
+
+    override fun faildLoading(message: Any) {
     }
 
     override fun onItemServiceClickListener(plant: ServiceItem) {

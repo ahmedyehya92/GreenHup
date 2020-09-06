@@ -14,14 +14,5 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        val resources = resources
-
-
-        val displayMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val height =  ( displayMetrics.heightPixels / (resources.displayMetrics.densityDpi / 160f)).roundToInt()
-        val width = (displayMetrics.widthPixels / (resources.displayMetrics.densityDpi / 160f)).roundToInt()
-
-        lout_circle.layoutParams.height= displayMetrics.widthPixels
     }
 }

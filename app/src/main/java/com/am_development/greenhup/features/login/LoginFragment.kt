@@ -5,8 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 
 import com.am_development.greenhup.R
+import com.am_development.greenhup.core.RequestIntervalHandler2
+import com.am_development.greenhup.core.isPasswordValid
+import com.am_development.greenhup.core.isValidEmail
+import com.am_development.greenhup.core.textValue
+import kotlinx.android.synthetic.main.fragment_login.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,10 +25,21 @@ private const val ARG_PARAM2 = "param2"
  * Use the [LoginFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(), LoginView {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var requestIntervalHandler: RequestIntervalHandler2? = null
+    private val tryAgainTriggerObserever = Observer<Int> {
+        when (it) {
+            //  1 -> categoryId?.let { presenter?.getSubCategories(currentPage, it) }
+        }
+    }
+
+    private val presenter: LoginPresenter by lazy {
+        LoginImplPresenter(this)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +55,26 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        requestIntervalHandler =
+            RequestIntervalHandler2(lout_loading_interval_view_container, context!!, false)
+        requestIntervalHandler?.tryAgainTrigger?.observe(this, tryAgainTriggerObserever)
+        requestIntervalHandler?.setMessageErrorTextColor(R.color.mossy_green)
+
+        btn_login!!.setOnClickListener {
+
+            if(et_email.isValidEmail() && et_password.isPasswordValid())
+                presenter.login(et_email.textValue(), et_password.textValue())
+
+            /* fragmentManager!!.beginTransaction()
+                 .add(R.id.main_fragment_container, CartFragment(), "cart_fragment")
+                 .addToBackStack(null).commit()*/
+        }
+
     }
 
     companion object {
@@ -57,5 +95,34 @@ class LoginFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun successfulLogin() {
+        Toast.makeText(context,"Congratulations! Successful login", Toast.LENGTH_LONG).show()
+        activity?.onBackPressed()
+    }
+
+    override fun failedLogin() {
+    }
+
+    override fun showLoading() {
+        requestIntervalHandler?.showLoadingView()
+    }
+
+    override fun finishLoading() {
+        requestIntervalHandler?.finishLoading()
+    }
+
+    override fun connectionError(message: String?) {
+        finishLoading()
+        Toast.makeText(context,message?:"Unknown error", Toast.LENGTH_LONG).show()
+    }
+
+    override fun faildLoading(message: Any) {
+    }
+
+    override fun onStop() {
+        presenter.onStop(this)
+        super.onStop()
     }
 }

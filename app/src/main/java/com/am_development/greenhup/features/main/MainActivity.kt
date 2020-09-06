@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
     private fun checkLoginStatus() {
         if(tokenUseCase.isLoggedIn)
         {
-
+            tv_status_indicator.text= tokenUseCase.userName
         } else {
             lout_btn_logout.visibility= View.GONE
             tv_status_indicator.text= getString(R.string.login)
@@ -124,7 +124,10 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
 
     fun setupViewPager()
     {
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_home))
+        val tab= tabLayout.newTab()
+        tab.setIcon(R.drawable.ic_home)
+        tab.text= "Homne"
+        tabLayout.addTab(tab)
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_shopping_cart))
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_favorite))
         tabLayout!!.tabGravity = TabLayout.GRAVITY_FILL
@@ -165,5 +168,10 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
                 startActivity(Intent(this, VendorsActivity::class.java))
             }
         }
+    }
+
+    override fun onResume() {
+        checkLoginStatus()
+        super.onResume()
     }
 }

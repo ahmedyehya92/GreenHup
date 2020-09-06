@@ -12,14 +12,16 @@ import okhttp3.Interceptor
 import retrofit2.Call
 import java.io.IOException
 import okhttp3.OkHttpClient
+import okhttp3.Request
 
 
-private const val SERVER_BASE_URL = "http://caf-event.netservex.com/web/api/"
+private const val SERVER_BASE_URL = "http://api.greenhub.shop/api/"
 
 private val retrofit: Retrofit by lazy {
 
     val httpClient = OkHttpClient.Builder()
-    httpClient.addNetworkInterceptor(AuthorizationInterceptor())
+    httpClient.addInterceptor(AnotherHeadersInterceptor()).
+    addInterceptor(AuthorizationInterceptor())
     //httpClient.addInterceptor(LogJsonInterceptor())
 
     Retrofit.Builder()
@@ -35,15 +37,26 @@ val cafApis: CafApis by lazy {
 }
 
 interface CafApis {
-    @POST("login_check")
-    fun login(@Body userObject: LoginFields)
-            : Single<LoginResponse>
-
-
     @POST("token/refresh")
-    fun getTokenInterceptor(@Body refreshToken: RefreshTokenFields)
-            : Call<LoginResponse>
+    fun getTokenInterceptor(@Body refreshToken: RefreshTokenFields
+    ): Call<LoginResponse>
 
+    @POST("login")
+    fun getTokenInterceptor(@Query("email") email: String,
+                            @Query("password") passwowrd: String
+    ): Call<ResponseLogin>
+
+    @POST("login")
+    fun login(
+        @Query("email") email: String,
+        @Query("password") passwowrd: String
+    ): Single<ResponseLogin>
+
+    @GET("home")
+    fun home(): Single<ResponseHome>
+
+    @GET("services")
+    fun services(): Single<ResponseServices>
 
 }
 
@@ -106,3 +119,26 @@ class AuthorizationInterceptor(private val tokenUseCase: TokenUseCase = TokenUse
     }
     */
 }
+
+class AnotherHeadersInterceptor(private val tokenUseCase: TokenUseCase = TokenUseCase()) : Interceptor {
+
+    @Throws(IOException::class)
+    override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
+        Log.i("Interceptor", "is logged In = ${tokenUseCase.isLoggedIn}")
+
+        val original: Request = chain.request()
+
+        val request: Request = original.newBuilder()
+            .header("Accept", "application/json")
+            .apply {
+                if (tokenUseCase.isLoggedIn)
+                    this.header("Authorization", tokenUseCase.token)
+            }
+            .method(original.method(), original.body())
+            .build()
+
+        return chain.proceed(request)
+
+    }
+}
+
