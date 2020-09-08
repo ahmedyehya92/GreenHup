@@ -58,6 +58,13 @@ interface CafApis {
     @GET("services")
     fun services(): Single<ResponseServices>
 
+    @GET("categories")
+    fun categories(): Single<ResponseCategories>
+
+    @GET("categoryproducts/{categoryId}")
+    fun categoryProducts(@Path("categoryId") categoryId: String,
+                         @Query("p") page: Int
+                         ): Single<ResponseCategoryProducts>
 }
 
 

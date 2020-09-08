@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".features.categories_vendor.CategoriesActivity">
+        tools:context=".features.category_products.CategoryProductsActivity">
 
     <com.github.florent37.arclayout.ArcLayout
             android:id="@+id/arcLayout"
@@ -84,8 +84,9 @@
 
     </LinearLayout>
 
+
     <com.am_development.greenhup.customviews.CustomRecyclerView
-            android:id="@+id/rv_categories"
+            android:id="@+id/rv_category_products"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
@@ -93,10 +94,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="2"
             tools:itemCount="5"
-            tools:listitem="@layout/item_category_vendor_list"
+            tools:listitem="@layout/item_plants_list"
             />
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

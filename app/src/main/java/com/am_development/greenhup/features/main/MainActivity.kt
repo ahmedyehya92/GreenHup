@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
         menuItemsList.add(ItemNovigtionMenu(true,"About"))
         menuItemsList.add(ItemNovigtionMenu(true,"Shop"))
         menuItemsList.add(ItemNovigtionMenu(true,"Services"))
+        menuItemsList.add(ItemNovigtionMenu(true,"Categories"))
         menuItemsList.add(ItemNovigtionMenu(true,"Vendors"))
         menuItemsList.add(ItemNovigtionMenu(true,"Contact us"))
 
@@ -165,7 +166,10 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
                 startActivity(Intent(this,ServicesActivity::class.java))
             }
             4-> {
-                startActivity(Intent(this, VendorsActivity::class.java))
+                startActivity(Intent(this, CategoriesActivity::class.java))
+            }
+            5-> {
+                startActivity(Intent(this, CategoriesActivity::class.java))
             }
         }
     }

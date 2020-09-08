@@ -25,6 +25,8 @@ interface Repository {
     fun setRefreshToken(refreshToken: String)
     fun home():Single<ResponseHome>
     fun services(): Single<ResponseServices>
+    fun categories(): Single<ResponseCategories>
+    fun categoryProducts(categoryId: String, page:Int): Single<ResponseCategoryProducts>
 }
 
 class RepositoryImplementer (
@@ -39,6 +41,8 @@ class RepositoryImplementer (
 
     override fun home(): Single<ResponseHome> = server.home()
     override fun services(): Single<ResponseServices> = server.services()
+    override fun categories(): Single<ResponseCategories> = server.categories()
+    override fun categoryProducts(categoryId: String, page: Int): Single<ResponseCategoryProducts> = server.categoryProducts(categoryId, page)
 
     override fun getRefreshToken(): String {
         return preferencesHelper.refreshToken

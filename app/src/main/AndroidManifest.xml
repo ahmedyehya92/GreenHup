@@ -15,9 +15,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".features.package_details.PackageDetailsActivity"
-                android:exported="true"
-                ></activity>
+        <activity android:name=".features.category_products.CategoryProductsActivity"></activity>
+        <activity
+                android:name=".features.package_details.PackageDetailsActivity"
+                android:exported="true" />
         <activity android:name=".features.search.SearchActivity" />
         <activity android:name=".features.sign.SignActivity" />
         <activity android:name=".features.on_boarding.OnBoardingActivity" />

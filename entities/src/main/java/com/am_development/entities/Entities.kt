@@ -70,12 +70,18 @@ data class Specification(
     @field:SerializedName("value") val value: String
 )
 
-
+data class ResponseCategories(
+    @field:SerializedName("categories") val categories: MutableList<Category>
+)
 
 data class Category(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,
-    @field:SerializedName("plants") var plantsList: MutableList<Plant>
+    @field:SerializedName("latest_products") var plantsList: MutableList<Plant>
+)
+
+data class ResponseCategoryProducts(
+    @field:SerializedName("categoryproducts") val categoryProducts: MutableList<Plant>
 )
 
 data class CartItem(
@@ -202,6 +208,7 @@ const val PREF_KEY_USERNAME = "PREF_KEY_USERNAME"
 const val PREF_KEY_PASSWORD = "PREF_KEY_PASSWORD"
 
 const val KEY_SEARCH_QUERY= "KEY_SEARCH_QUERY"
+const val KEY_CATEGORY_ID= "KEY_CATEGORY_ID"
 
 const val REQUEST_FETCH_EVENTS = 1001
 const val REQUEST_FETCH_EVENT_GUESTS = 1002
