@@ -65,6 +65,10 @@ interface CafApis {
     fun categoryProducts(@Path("categoryId") categoryId: String,
                          @Query("p") page: Int
                          ): Single<ResponseCategoryProducts>
+
+    @GET("product_details/{plant_id}")
+    fun plantDetails(@Path("plant_id") plantId: String): Single<ResponsePlantDetails>
+
 }
 
 

@@ -176,7 +176,9 @@ data class SeatDB(
 
 
 
-
+data class ResponsePlantDetails(
+    @field:SerializedName("details") val details: Plant
+)
 
 
 

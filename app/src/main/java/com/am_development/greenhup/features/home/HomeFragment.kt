@@ -14,8 +14,7 @@ import com.am_development.entities.SliderItem
 
 import com.am_development.greenhup.R
 import com.am_development.greenhup.customviews.nonswipable_view_pager.SmartFragmentStatePagerAdapter
-import com.am_development.greenhup.features.details.DetailsActivity
-import com.am_development.greenhup.features.package_details.PackageDetailsActivity
+import com.am_development.greenhup.features.details.PlantDetailsActivity
 import com.am_development.greenhup.features.search.SearchActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
@@ -171,7 +170,7 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
         tv_offer_name.text= plant.name
         tv_offer_details.text= plant.details
         btn_get_offer_now.setOnClickListener {
-            startActivity(Intent(activity, DetailsActivity::class.java))
+            startActivity(Intent(activity, PlantDetailsActivity::class.java))
         }
         plant.offerEndAt?.apply { startCountdown((this.toLong()*1000)-(Calendar.getInstance().timeInMillis)) }
     }
@@ -225,7 +224,7 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
     }
 
     override fun onItemHorizontalListClickListener(plant: Plant) {
-        startActivity(Intent(activity, DetailsActivity::class.java))
+        startActivity(Intent(activity, PlantDetailsActivity::class.java))
     }
 
     inner class SectionsPagerAdapter(fm: FragmentManager, packagesList: MutableList<MPackage>) : SmartFragmentStatePagerAdapter(fm) {

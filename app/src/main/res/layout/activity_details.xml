@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".features.details.DetailsActivity">
+        tools:context=".features.details.PlantDetailsActivity">
 
     <com.github.florent37.arclayout.ArcLayout
             android:id="@+id/arcLayout"
@@ -72,6 +72,7 @@
                     app:custom_font="@string/font_name_circular_std_book" />
 
             <com.am_development.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_category_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Indoor"
@@ -100,6 +101,7 @@
                     app:custom_font="@string/font_name_circular_std_book" />
 
             <RatingBar
+                    android:id="@+id/rating_bar"
                     style="@style/Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -185,6 +187,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                            android:id="@+id/im_plant"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ex_plant_png" />
@@ -192,6 +195,7 @@
                 </LinearLayout>
 
                 <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                        android:id="@+id/tv_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -232,6 +236,7 @@
                         />
 
                 <com.am_development.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_vendor_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:custom_font="@string/font_name_circular_std_book"
@@ -267,6 +272,9 @@
                     android:orientation="vertical"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:id="@+id/lout_specifications"
+                    tools:visibility="visible"
+                    android:visibility="gone"
                     >
                 <com.am_development.greenhup.customviews.CustomeFontTextView
                         android:layout_width="wrap_content"
@@ -278,6 +286,7 @@
                         />
 
                 <com.am_development.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_specifications"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:custom_font="@string/font_name_circular_std_book"
