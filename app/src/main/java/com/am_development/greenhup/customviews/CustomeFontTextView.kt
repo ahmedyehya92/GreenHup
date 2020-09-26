@@ -8,6 +8,7 @@ import com.am_development.greenhup.core.FontCache
 
 class CustomeFontTextView : androidx.appcompat.widget.AppCompatTextView {
 
+
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
 
         applyCustomFont(context, attrs)

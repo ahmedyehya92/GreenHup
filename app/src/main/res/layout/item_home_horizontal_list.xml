@@ -25,10 +25,15 @@
 
     <com.am_development.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:text="Gbit Plant"
             android:textSize="14sp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
             app:custom_font="@string/font_raleway_medium"
             app:layout_constraintBottom_toTopOf="@+id/tv_price"
             app:layout_constraintEnd_toEndOf="@+id/lout_green"

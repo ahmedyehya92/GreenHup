@@ -259,6 +259,7 @@
                     />
 
             <WebView
+                    android:id="@+id/web_view_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
@@ -266,68 +267,27 @@
                     />
 
 
-            <LinearLayout
+            <com.am_development.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_circular_std_book"
+                    android:textColor="@color/dark"
+                    android:text="Available in Stock"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="24sp"
+                    />
+
+
+            <TableLayout
+                    android:id="@+id/table_specification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:padding="5dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:id="@+id/lout_specifications"
-                    tools:visibility="visible"
-                    android:visibility="gone"
-                    >
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:custom_font="@string/font_name_circular_std_book"
-                        android:textColor="@color/dark"
-                        android:textSize="24sp"
-                        android:text="Specifications"
-                        />
+                    android:layout_marginEnd="16dp"
+                    />
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:id="@+id/tv_specifications"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:custom_font="@string/font_name_circular_std_book"
-                        android:textColor="@color/battleship_grey"
-                        android:textSize="14sp"
-                        android:text="Length : 10\nWidth:10\n10Height: 10"
-
-                        />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    >
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:custom_font="@string/font_name_circular_std_book"
-                        android:textColor="@color/dark"
-                        android:textSize="24sp"
-                        android:text="Available Colors"
-                        />
-
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:custom_font="@string/font_name_circular_std_book"
-                        android:textColor="@color/battleship_grey"
-                        android:textSize="14sp"
-                        android:text="Green\nYellow"
-
-                        />
-
-
-            </LinearLayout>
 
 
 

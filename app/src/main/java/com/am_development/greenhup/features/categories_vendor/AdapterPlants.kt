@@ -103,6 +103,7 @@ class AdapterPlants (
                     .load(model.imageUrl)
                     .into(plantViewHolder.im_plant)
 
+                plantViewHolder.tv_position.text= model.categoryName
 
                 plantViewHolder.tv_name?.text = model.name
                 plantViewHolder.tv_price?.text = model.price

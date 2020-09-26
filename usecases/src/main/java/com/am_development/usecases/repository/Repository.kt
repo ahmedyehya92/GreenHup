@@ -26,6 +26,7 @@ interface Repository {
     fun home():Single<ResponseHome>
     fun services(): Single<ResponseServices>
     fun categories(): Single<ResponseCategories>
+    fun vendors(): Single<ResponseVendors>
     fun categoryProducts(categoryId: String, page:Int): Single<ResponseCategoryProducts>
     fun plantDetails(plantId: String): Single<ResponsePlantDetails>
 }
@@ -43,6 +44,8 @@ class RepositoryImplementer (
     override fun home(): Single<ResponseHome> = server.home()
     override fun services(): Single<ResponseServices> = server.services()
     override fun categories(): Single<ResponseCategories> = server.categories()
+    override fun vendors(): Single<ResponseVendors> = server.vendors()
+
     override fun categoryProducts(categoryId: String, page: Int): Single<ResponseCategoryProducts> = server.categoryProducts(categoryId, page)
     override fun plantDetails(plantId: String): Single<ResponsePlantDetails> = server.plantDetails(plantId)
 

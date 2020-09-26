@@ -1,5 +1,6 @@
 package com.am_development.greenhup.features.details
 
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import com.am_development.usecases.usecases.GetPlantDetailsUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -19,6 +20,7 @@ class PlantDetailsImplPresenter(
             .subscribe({
                 view.addDetails(it.details)
             },{
+                Log.e("PlantDetailsActivity", "${it.message}")
                 view.connectionError()
             })
             .also { disposables.add(it) }

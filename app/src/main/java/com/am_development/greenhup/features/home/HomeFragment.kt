@@ -3,6 +3,7 @@ package com.am_development.greenhup.features.home
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -130,10 +131,12 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
     }
 
     override fun addItemsToGallery(plantsList: MutableList<SliderItem>) {
-        page_slider.offscreenPageLimit = 3
+        //page_slider.offscreenPageLimit = 3
         val sliderGalleryAdapter = AdapterHeaderGallery(plantsList, context!!)
 
         page_slider.adapter = sliderGalleryAdapter
+        Log.e("HomeFragment","list size= ${plantsList.size}")
+        Log.e("HomeFragment","slider size= ${page_slider.adapter?.count}")
     }
 
     override fun addItemsToHorizontalList(plantsList: MutableList<Plant>) {
@@ -142,12 +145,16 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
 
     override fun addItemsToPackagesSlider(packagesList: MutableList<MPackage>) {
 
+
+
         this.packagesList= packagesList
 
         adapter = SectionsPagerAdapter(activity!!.supportFragmentManager, packagesList)
         view_pager_packages.adapter= adapter
         view_pager_packages.postInitViewPager()
         view_pager_packages.setScrollDurationFactor(6.0)
+
+        updateSliderData()
 
         lout_left_arrow_package.setOnClickListener {
             if(view_pager_packages.currentItem > 0)
@@ -224,7 +231,7 @@ class HomeFragment : Fragment(),HomeView,AdapterHorizontalPlantsList.customButto
     }
 
     override fun onItemHorizontalListClickListener(plant: Plant) {
-        startActivity(Intent(activity, PlantDetailsActivity::class.java))
+        startActivity(PlantDetailsActivity.instantiateIntent(requireContext(), plant))
     }
 
     inner class SectionsPagerAdapter(fm: FragmentManager, packagesList: MutableList<MPackage>) : SmartFragmentStatePagerAdapter(fm) {

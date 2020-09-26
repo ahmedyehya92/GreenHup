@@ -169,7 +169,7 @@ class MainActivity : AppCompatActivity(), AdapterSlideMenu.CustomeListener {
                 startActivity(Intent(this, CategoriesActivity::class.java))
             }
             5-> {
-                startActivity(Intent(this, CategoriesActivity::class.java))
+                startActivity(Intent(this, VendorsActivity::class.java))
             }
         }
     }

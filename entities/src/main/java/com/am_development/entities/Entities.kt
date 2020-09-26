@@ -61,24 +61,41 @@ data class Plant(
     @field:SerializedName("offer_start_timestamp") val offerStartAt: String?= null,
     @field:SerializedName("offer_end_timestamp") val offerEndAt: String? = null,
     @field:SerializedName("discount_percentage") val discountPercentage: String? =null,
-    @field:SerializedName("details") val details: String?= null
+    @field:SerializedName("details") val details: String?= null,
+    @field:SerializedName("sellername") val vendorName: String?= null,
+    @field:SerializedName("specs_cats") val specsCats: MutableList<SpecsCatItem>?= null
     ): Serializable
 
+data class SpecsCatItem(
+    @field:SerializedName("price") val price: String,
+    @field:SerializedName("offer_start_timestamp") val offerStartAt: String?= null,
+    @field:SerializedName("offer_end_timestamp") val offerEndAt: String? = null,
+    @field:SerializedName("discount_percentage") val discountPercentage: String? =null,
+    @field:SerializedName("specifications") val specifications: MutableList<Specification>
+    ): Serializable
 
 data class Specification(
+    @field:SerializedName("spec_id") val specId: Int,
     @field:SerializedName("spec_name") val specName: String,
     @field:SerializedName("value") val value: String
-)
+): Serializable
 
 data class ResponseCategories(
     @field:SerializedName("categories") val categories: MutableList<Category>
 )
+
+data class ResponseVendors(
+    @field:SerializedName("vendors") val categories: MutableList<Category>
+)
+
 
 data class Category(
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,
     @field:SerializedName("latest_products") var plantsList: MutableList<Plant>
 )
+
+
 
 data class ResponseCategoryProducts(
     @field:SerializedName("categoryproducts") val categoryProducts: MutableList<Plant>
@@ -111,7 +128,7 @@ data class Home(
 data class SliderItem(
     val id: String,
     val title: String,
-    val imageUrl: String
+    @field:SerializedName("image") val imageUrl: String
 )
 
 data class ItemNovigtionMenu(
@@ -211,6 +228,7 @@ const val PREF_KEY_PASSWORD = "PREF_KEY_PASSWORD"
 
 const val KEY_SEARCH_QUERY= "KEY_SEARCH_QUERY"
 const val KEY_CATEGORY_ID= "KEY_CATEGORY_ID"
+const val KEY_PLANT= "KEY_PLANT"
 
 const val REQUEST_FETCH_EVENTS = 1001
 const val REQUEST_FETCH_EVENT_GUESTS = 1002
