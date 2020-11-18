@@ -1,41 +1,114 @@
 <resources>
-    <string name="app_name">Green Hub</string>
+    <string name="app_name" translatable="false">Green Hub</string>
 
-    <string name="font_name_helvatica">Helvetica</string>
-    <string name="fon_Helvetica_Oblique">Helvetica-Oblique</string>
-    <string name="font_raleway_medium">Raleway-Medium</string>
-    <string name="font_muli">Muli</string>
-    <string name="font_muli_bold">Muli-Bold</string>
-    <string name="font_raleway_bold">Raleway-Bold</string>
-    <string name="font_hkgrotesk_semibold">HKGrotesk-SemiBold</string>
-    <string name="menu_item_search_event">Search Event</string>
-    <string name="menu_item_go_backend">Go Backend</string>
+    <string name="font_name_helvatica" translatable="false">Helvetica</string>
+    <string name="fon_Helvetica_Oblique" translatable="false">Helvetica-Oblique</string>
+    <string name="font_raleway_medium" translatable="false">Raleway-Medium</string>
+    <string name="font_muli" translatable="false">Muli</string>
+    <string name="font_muli_bold" translatable="false">Muli-Bold</string>
+    <string name="font_raleway_bold" translatable="false">Raleway-Bold</string>
+    <string name="font_hkgrotesk_semibold" translatable="false">HKGrotesk-SemiBold</string>
     <string name="menu_item_logout">Logout</string>
     <string name="user_name_error_message">Invalid Username</string>
     <string name="password_error_message">Please match the requested format</string>
     <string name="unknown_error">Unknown Error</string>
     <string name="connection_error_message">Connection error! Try again</string>
-    <string name="font_name_helvatica_bold">Helvetica-Bold</string>
+    <string name="font_name_helvatica_bold" translatable="false">Helvetica-Bold</string>
     <string name="confirm_button">Confirm</string>
     <string name="more_info_button">More info</string>
-    <string name="events_hint_list">Events</string>
     <string name="not_logged_in">You are not logged in yet!</string>
-    <string name="already_in_screen">You are already in</string>
-    <string name="sea_btn">Seat</string>
-    <string name="font_name_hkgrotesk_bold">HKGrotesk-Bold</string>
-    <string name="font_name_sfpro_display_mdedium">SFProDisplay-Medium</string>
-    <string name="font_name_sfpro_display_regular">SFProDisplay-Regular</string>
-    <string name="unseat_button">Unseat</string>
+    <string name="font_name_hkgrotesk_bold" translatable="false">HKGrotesk-Bold</string>
+    <string name="font_name_sfpro_display_mdedium" translatable="false">SFProDisplay-Medium</string>
+    <string name="font_name_sfpro_display_regular" translatable="false">SFProDisplay-Regular</string>
     <string name="empty_list">List is empty</string>
-    <string name="list_empt">NOT FOUND GUEST</string>
-    <string name="backend_url">http://caf-event.netservex.com/web/admin/</string>
-    <string name="font_name_sfpro_display_bold">SFProDisplay-Bold</string>
-    <string name="font_name_circular_std_book">Circular-Std-Book</string>
-    <string name="font_name_segoe_ui">Segoe-UI</string>
+    <string name="font_name_sfpro_display_bold" translatable="false">SFProDisplay-Bold</string>
+    <string name="font_name_circular_std_book" translatable="false">Circular-Std-Book</string>
+    <string name="font_name_segoe_ui" translatable="false">Segoe-UI</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="version_name">0.0.1</string>
-    <string name="drawer_open">drawer open</string>
-    <string name="drawer_close">drawer close</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="version_name" translatable="false">1.1</string>
+    <string name="drawer_open" translatable="false">drawer open</string>
+    <string name="drawer_close" translatable="false">drawer close</string>
     <string name="login">Login</string>
+    <string name="currency">KWD</string>
+    <string name="about_us">About us</string>
+    <string name="search">Search</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="show_location_on_map">Show Location on Map</string>
+    <string name="category">Category</string>
+    <string name="reviews">Reviews</string>
+    <string name="buy_it_now">BUY IT NOW</string>
+    <string name="start_from">Start from:</string>
+    <string name="by">By:</string>
+    <string name="details">Details</string>
+    <string name="available_in_stock">Available in Stock</string>
+    <string name="next">Next</string>
+    <string name="package_name">Package Name</string>
+    <string name="name">Name</string>
+    <string name="comments">Comments</string>
+    <string name="checkout">Checkout</string>
+    <string name="your_message_here">Your message here</string>
+    <string name="request_now">Request Now</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="cart_title">Cart</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="tax">Tax</string>
+    <string name="total">TOTAL</string>
+    <string name="featured">Featured</string>
+    <string name="packages">Packages</string>
+    <string name="special_offers">SPECIAL OFFERS</string>
+    <string name="get">Get</string>
+    <string name="off">off</string>
+    <string name="get_now">GET NOW</string>
+    <string name="seconds">Seconds</string>
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hours</string>
+    <string name="days">Days</string>
+    <string name="welcome">Welcome,</string>
+    <string name="sign_in_to_continue">Sign in to Continue</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="watering_without_worry">Watering without worry</string>
+    <string name="you_can_set_your_schedule_watering_plant_properly_and_can_exchange_schedule_automatically_if_come_a_bad_climate">you can set your schedule watering plant properly and can exchange schedule automatically if come a bad climate</string>
+    <string name="re_password">Re Password</string>
+    <string name="verification">Verification</string>
+    <string name="active_link_has_been_sent_to_your_email_address">Active Link has been sent to your email address,</string>
+    <string name="continu">CONTINUE</string>
+    <string name="more">More</string>
+    <string name="error_connection">error connection, try again!</string>
+    <string name="you_are_not_logged_in">You are not Logged in</string>
+    <string name="want_to_login">Login?</string>
+    <string name="you_must_login">You must login</string>
+    <string name="successful_login">Congratulations! Successful login</string>
+    <string name="home">Home</string>
+    <string name="about">About</string>
+    <string name="shop">Shop</string>
+    <string name="services">Services</string>
+    <string name="contact_us">Contact us</string>
+    <string name="lets_get_started">Let\'s Get Started</string>
+    <string name="first_on_boarding_title">If a product is running out of quantity</string>
+    <string name="first_on_boarding_text">You can book the product with the required quantity, An email will be sent to you when the product is available</string>
+    <string name="second_on_boarding_title">Quality and variety of products
+</string>
+    <string name="second_on_boarding_text">We chose for you a variety of the best products in the world We always strive to meet all customers\' needs</string>
+    <string name="third_on_boarding_title">Technical support</string>
+    <string name="third_on_boarding_text">We have specialists in all disciplines to answer all questions
+Through online chatting on the website</string>
+    <string name="remove_from_cart">Remove from cart</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="successful_sent">Successful Sent</string>
+    <string name="you_will_receive_email">You will receive email to activate account!</string>
+    <string name="state">State</string>
+    <string name="country">Country</string>
+    <string name="save">Save</string>
+    <string name="default_language">Default Language</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="settings">Settings</string>
+    <string name="item_code">Item Code</string>
+    <string name="successful_update">Successful Update</string>
+    <string name="remove">Remove</string>
 </resources>

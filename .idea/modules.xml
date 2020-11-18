@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GreenHup.iml" filepath="$PROJECT_DIR$/GreenHup.iml" group="GreenHup" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="GreenHup/app" />
-      <module fileurl="file://$PROJECT_DIR$/entities/entities.iml" filepath="$PROJECT_DIR$/entities/entities.iml" group="GreenHup/entities" />
-      <module fileurl="file://$PROJECT_DIR$/usecases/usecases.iml" filepath="$PROJECT_DIR$/usecases/usecases.iml" group="GreenHup/usecases" />
+      <module fileurl="file://$PROJECT_DIR$/GreenHup.iml" filepath="$PROJECT_DIR$/GreenHup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GreenHup.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GreenHup.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/entities/GreenHup.entities.iml" filepath="$PROJECT_DIR$/.idea/modules/entities/GreenHup.entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usecases/GreenHup.usecases.iml" filepath="$PROJECT_DIR$/.idea/modules/usecases/GreenHup.usecases.iml" />
     </modules>
   </component>
 </project>

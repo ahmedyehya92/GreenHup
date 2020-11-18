@@ -6,7 +6,7 @@
         android:layout_width="match_parent" android:layout_height="wrap_content">
 
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -19,14 +19,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/btn_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:custom_font="@string/font_name_hkgrotesk_bold"
             android:background="@drawable/shape_rectangle_green_radius_14dp"
-            android:text="More"
+            android:text="@string/more"
             android:textSize="12sp"
             android:paddingVertical="5dp"
             android:paddingHorizontal="15dp"
@@ -34,7 +34,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_name" />
 
-    <com.am_development.greenhup.customviews.CustomRecyclerView
+    <com.openet.greenhup.customviews.CustomRecyclerView
             android:id="@+id/rv_plants"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

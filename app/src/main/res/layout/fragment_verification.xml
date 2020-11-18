@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".features.verification_sent.VerificationFragment">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_sfpro_display_bold"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:text="@string/verification"
+                android:layout_marginTop="64dp"
+                />
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:text="@string/active_link_has_been_sent_to_your_email_address"
+                />
+
+
+        <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:custom_font="@string/font_name_hkgrotesk_bold"
+                app:backgroundTint="@color/mossy_green"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                app:cornerRadius="6dp"
+                android:text="@string/continu"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="64dp"
+                />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".features.save_order.SaveOrderActivity">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            >
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                />
+
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="5"
+                android:background="@drawable/shape_frame_edit_text"
+                android:layout_marginTop="24sp"
+                android:hint="@string/comments"
+                android:gravity="start"
+                android:padding="16dp"
+                app:custom_font="@string/font_name_circular_std_book"
+                />
+
+        <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                android:id="@+id/btn_check_out"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:custom_font="@string/font_name_hkgrotesk_bold"
+                app:backgroundTint="@color/mossy_green"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                app:cornerRadius="6dp"
+                android:text="@string/checkout"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="64dp"
+                />
+
+    </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            >
+    </RelativeLayout>
+
+</RelativeLayout>

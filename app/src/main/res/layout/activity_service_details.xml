@@ -61,7 +61,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical" >
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_service_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:custom_font="@string/font_name_hkgrotesk_bold"
@@ -81,6 +82,7 @@
                     >
 
                 <ImageView
+                        android:id="@+id/im_service"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ex_gardening_ideas"
@@ -89,116 +91,62 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <WebView
+                    android:id="@+id/web_view_package_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+
+            <com.openet.greenhup.customviews.CustomEditTextView
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="5"
+                    android:background="@drawable/shape_frame_edit_text"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="24sp"
+                    android:hint="@string/your_message_here"
+                    android:gravity="start"
+                    android:padding="16dp"
+                    app:custom_font="@string/font_name_circular_std_book"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                    android:id="@+id/btn_request"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_name_segoe_ui"
-                    android:text="Custom designed four season container gardens are Catherine's
-please fill in the form below"
-                    android:textSize="16sp"
-                    android:textColor="@color/brown_grey"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="8dp"
-                    />
-
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="16dp"
+                    app:custom_font="@string/font_name_hkgrotesk_bold"
+                    app:backgroundTint="@color/mossy_green"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    app:cornerRadius="6dp"
+                    android:text="@string/request_now"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:layout_gravity="end"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp"
                     android:layout_marginTop="16dp"
-                    >
-
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        >
-
-                    <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/check_selector"
-                            />
-
-                    <com.am_development.greenhup.customviews.CustomeFontTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:custom_font="@string/font_name_sfpro_display_regular"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Indoor"
-                            android:layout_marginStart="8dp"
-                            />
-
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="64dp"
-                        >
-
-                    <ImageView
-                            android:id="@+id/im_outdoor_check"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/check_selector"
-                            />
-
-                    <com.am_development.greenhup.customviews.CustomeFontTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:custom_font="@string/font_name_sfpro_display_regular"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
-                            android:text="Outdoor"
-                            android:layout_marginStart="8dp"
-                            />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-
-
-            <com.am_development.greenhup.customviews.CustomEditTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:custom_font="@string/font_name_sfpro_display_regular"
-                    android:hint="Width"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
                     />
-
-            <com.am_development.greenhup.customviews.CustomEditTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:custom_font="@string/font_name_sfpro_display_regular"
-                    android:hint="Height"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="16dp"
-                    />
-
-            <com.am_development.greenhup.customviews.CustomEditTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:custom_font="@string/font_name_sfpro_display_regular"
-                    android:hint="Accessories List"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="16dp"
-                    android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
-                    />
-
 
 
         </LinearLayout>
     </ScrollView>
 
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

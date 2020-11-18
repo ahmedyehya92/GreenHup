@@ -30,10 +30,10 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 >
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Welcome,"
+                    android:text="@string/welcome"
                     android:textColor="@color/black"
                     android:textSize="30sp"
                     app:custom_font="@string/font_name_sfpro_display_bold"
@@ -43,27 +43,27 @@
         </LinearLayout>
 
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign in to Continue"
+                android:text="@string/sign_in_to_continue"
                 android:textColor="@color/brown_grey"
                 android:textSize="14sp"
                 android:layout_marginTop="2dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,17 +71,17 @@
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,10 +89,10 @@
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password?"
+                android:text="@string/forgot_password"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_gravity="end"
@@ -101,7 +101,7 @@
                 />
 
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+        <com.openet.greenhup.customviews.CustomeMaterialButtonFont
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -109,7 +109,7 @@
                 app:backgroundTint="@color/mossy_green"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 app:cornerRadius="6dp"
-                android:text="SIGN IN"
+                android:text="@string/sign_in"
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginTop="16dp"

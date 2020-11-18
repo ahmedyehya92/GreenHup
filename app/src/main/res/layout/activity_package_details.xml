@@ -59,13 +59,14 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Package Name"
+                    android:text="@string/package_name"
                     app:custom_font="@string/font_name_hkgrotesk_bold"
                     android:textSize="22sp"
                     android:textColor="@color/greyish_brown"
@@ -88,6 +89,7 @@
                         >
 
                     <ImageView
+                            android:id="@+id/im_package"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/ex_gardening_ideas"
@@ -98,7 +100,8 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                        android:id="@+id/tv_price"
                         android:layout_width="200dp"
                         android:layout_height="70dp"
                         app:backgroundTint="@color/frog_green"
@@ -135,18 +138,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:visibility="gone"
                     >
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
+                <com.openet.greenhup.customviews.CustomeFontTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:custom_font="@string/font_name_circular_std_book"
                         android:textColor="@color/dark"
                         android:textSize="16sp"
-                        android:text="By: "
+                        android:text="@string/by"
                         />
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
+                <com.openet.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_seller_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:custom_font="@string/font_name_circular_std_book"
@@ -157,7 +162,7 @@
 
             </LinearLayout>
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:custom_font="@string/font_name_circular_std_book"
@@ -169,6 +174,7 @@
                     />
 
             <WebView
+                    android:id="@+id/web_view_package_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
@@ -191,33 +197,53 @@
             android:translationY="10dp"
             >
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+        <LinearLayout
+                android:id="@+id/btn_add_to_cart"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="BUY IT NOW"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="22sp"
-                app:backgroundTint="@color/mossy_green"
+                android:background="@color/mossy_green"
                 app:cornerRadius="0dp"
-                app:custom_font="@string/font_name_circular_std_book" />
+                >
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="22sp"
-                app:backgroundTint="@color/frog_green"
-                app:cornerRadius="0dp"
-                app:custom_font="@string/font_name_circular_std_book"
-                app:icon="@drawable/ic_favorite"
-                app:iconGravity="textStart"
-                app:iconPadding="5dp" />
+            <ImageView
+                    android:id="@+id/im_icon_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_buy_button_title"
+                    android:textAllCaps="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_circular_std_book"
+                    android:text="@string/buy_it_now"
+                    android:textSize="22sp"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
 
 
 
     </LinearLayout>
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

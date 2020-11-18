@@ -63,13 +63,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/arcLayout">
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:imeOptions="actionSearch"
+                android:inputType="text"
                 android:id="@+id/et_search_query"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Search"
+                android:hint="@string/search"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 android:textColorHint="@color/mossy_green"
 
@@ -84,7 +86,7 @@
 
     </LinearLayout>
 
-    <com.am_development.greenhup.customviews.CustomRecyclerView
+    <com.openet.greenhup.customviews.CustomRecyclerView
             android:id="@+id/rv_categories"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -97,6 +99,18 @@
             tools:itemCount="5"
             tools:listitem="@layout/item_category_vendor_list"
             />
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

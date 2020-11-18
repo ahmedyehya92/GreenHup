@@ -56,58 +56,118 @@
             android:paddingHorizontal="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@+id/arcLayout">
 
         <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="Mini Dumby Square Series HG-3109"
                     android:textColor="@color/dark"
-                    app:custom_font="@string/font_name_circular_std_book" />
+                    app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
-                    android:id="@+id/tv_category_name"
-                    android:layout_width="wrap_content"
+            <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Indoor"
-                    android:textColor="@color/teal"
-                    android:textSize="12sp"
-                    app:custom_font="@string/font_name_circular_std_book" />
+                    android:orientation="horizontal"
+                    >
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                <com.openet.greenhup.customviews.CustomeFontTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/category"
+                        android:textColor="@color/dark"
+                        app:custom_font="@string/font_name_circular_std_book"
+                        android:layout_marginTop="8dp"
+                        />
+
+                <com.openet.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_category_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Indoor"
+                        android:textColor="@color/teal"
+                        android:textSize="12sp"
+                        app:custom_font="@string/font_name_circular_std_book" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                    <com.openet.greenhup.customviews.CustomeFontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/item_code"
+                            android:textColor="@color/dark"
+                            app:custom_font="@string/font_name_circular_std_book"
+                            android:layout_marginTop="8dp"
+                            />
+
+                    <com.openet.greenhup.customviews.CustomeFontTextView
+                            android:id="@+id/tv_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="GH-166"
+                            android:textColor="@color/teal"
+                            android:textSize="12sp"
+                            app:custom_font="@string/font_name_circular_std_book" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                    <com.openet.greenhup.customviews.CustomeFontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reviews"
+                            android:textColor="@color/dark"
+                            app:custom_font="@string/font_name_circular_std_book"
+                            android:layout_marginTop="8dp"
+                            />
+
+                    <RatingBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:id="@+id/rating_bar"
+                            />
+                </LinearLayout>
+
+            
+            </LinearLayout>
+            
+
 
         </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
-
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-            <com.am_development.greenhup.customviews.CustomeFontTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reviews"
-                    android:textColor="@color/dark"
-                    app:custom_font="@string/font_name_circular_std_book" />
-
-            <RatingBar
-                    android:id="@+id/rating_bar"
-                    style="@style/Widget.AppCompat.RatingBar.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
+        
+        
 
 
 
@@ -128,30 +188,44 @@
             android:translationY="10dp"
             >
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+        <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="BUY IT NOW"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="22sp"
-                app:backgroundTint="@color/mossy_green"
+                android:background="@color/mossy_green"
                 app:cornerRadius="0dp"
-                app:custom_font="@string/font_name_circular_std_book" />
+                 >
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_circular_std_book"
+                    android:text="@string/buy_it_now"
+                    android:textSize="22sp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/btn_favorite"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="22sp"
-                app:backgroundTint="@color/frog_green"
-                app:cornerRadius="0dp"
-                app:custom_font="@string/font_name_circular_std_book"
-                app:icon="@drawable/ic_favorite"
-                app:iconGravity="textStart"
-                app:iconPadding="5dp" />
+                android:background="@color/frog_green"
+                >
+
+            <ImageView
+                    android:id="@+id/favorite_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/favorite_selector"
+                    />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -190,11 +264,11 @@
                             android:id="@+id/im_plant"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ex_plant_png" />
+                            tools:src="@drawable/ex_plant_png" />
 
                 </LinearLayout>
 
-                <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                <com.openet.greenhup.customviews.CustomeMaterialButtonFont
                         android:id="@+id/tv_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -224,18 +298,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:visibility="gone"
                     >
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
+                <com.openet.greenhup.customviews.CustomeFontTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:custom_font="@string/font_name_circular_std_book"
                         android:textColor="@color/dark"
                         android:textSize="16sp"
-                        android:text="By: "
+                        android:text="@string/by"
                         />
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
+                <com.openet.greenhup.customviews.CustomeFontTextView
                         android:id="@+id/tv_vendor_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -247,13 +322,14 @@
 
             </LinearLayout>
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_details_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:custom_font="@string/font_name_circular_std_book"
                     android:textColor="@color/dark"
                     android:textSize="24sp"
-                    android:text="Details"
+                    android:text="@string/details"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     />
@@ -267,17 +343,22 @@
                     />
 
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:custom_font="@string/font_name_circular_std_book"
                     android:textColor="@color/dark"
-                    android:text="Available in Stock"
+                    android:text="@string/available_in_stock"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:textSize="24sp"
                     />
 
+
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
 
             <TableLayout
                     android:id="@+id/table_specification"
@@ -288,6 +369,7 @@
                     android:layout_marginEnd="16dp"
                     />
 
+            </HorizontalScrollView>
 
 
 
@@ -299,6 +381,7 @@
                     />
 
             <LinearLayout
+                    android:id="@+id/lout_arrows"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -347,5 +430,16 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+            android:id="@+id/lout_loading_interval_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

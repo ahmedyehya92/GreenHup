@@ -2,13 +2,18 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_marginHorizontal="16dp"
         app:cardCornerRadius="4dp"
         tools:context=".features.register.RegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +27,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 >
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sign Up"
@@ -36,27 +41,28 @@
         </LinearLayout>
 
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/name"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
@@ -64,7 +70,8 @@
 
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -72,34 +79,36 @@
                 />
 
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Re Password"
+                android:text="@string/re_password"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginTop="24dp"
                 app:custom_font="@string/font_name_sfpro_display_regular"
                 />
 
-        <com.am_development.greenhup.customviews.CustomEditTextView
+        <com.openet.greenhup.customviews.CustomEditTextView
+                android:id="@+id/et_confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -107,15 +116,15 @@
                 />
 
 
-        <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
-                android:id="@+id/btn_next"
+        <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 app:custom_font="@string/font_name_hkgrotesk_bold"
                 app:backgroundTint="@color/mossy_green"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 app:cornerRadius="6dp"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginTop="16dp"
@@ -123,5 +132,13 @@
 
     </LinearLayout>
 
+        <RelativeLayout
+                android:id="@+id/lout_loading_interval_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

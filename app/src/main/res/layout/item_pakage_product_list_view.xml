@@ -15,7 +15,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/test_plant" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toEndOf="@+id/im_plant"
             app:layout_constraintTop_toTopOf="@+id/im_plant" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

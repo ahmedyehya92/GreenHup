@@ -16,7 +16,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,12 +24,12 @@
             android:layout_marginStart="16dp"
             app:custom_font="@string/font_muli_bold"
             android:textColor="@color/hunter_green"
-            android:text="Watering without worry"
+            android:text="@string/watering_without_worry"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/im_board" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,9 +37,7 @@
             android:layout_marginStart="16dp"
             android:textColor="@color/hunter_green"
             app:custom_font="@string/font_muli"
-            android:text="you can set your schedule watering plant
-properly and can exchange schedule
-automatically if come a bad climate"
+            android:text="@string/you_can_set_your_schedule_watering_plant_properly_and_can_exchange_schedule_automatically_if_come_a_bad_climate"
             android:lineSpacingExtra="7sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />

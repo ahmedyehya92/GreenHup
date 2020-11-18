@@ -14,7 +14,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/test_plant" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             app:layout_constraintStart_toEndOf="@+id/im_plant"
             app:layout_constraintTop_toTopOf="@+id/im_plant" />
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:id="@+id/tv_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_rectangle_gray_radius_4dp"
@@ -47,7 +48,6 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/im_plant"
             app:layout_constraintStart_toStartOf="@+id/tv_total_price"
-
             app:layout_constraintTop_toBottomOf="@+id/tv_total_price">
 
         <ImageView
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_add_black_24dp" />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/tv_quantity"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
@@ -73,6 +73,35 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_remove_black_24dp" />
 
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            >
+
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_delete_outline_24"
+                />
+
+        <com.openet.greenhup.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_sfpro_display_regular"
+                android:text="@string/remove"
+                android:textColor="@color/black_text"
+                />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

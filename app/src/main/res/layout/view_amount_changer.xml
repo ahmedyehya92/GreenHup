@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lout_container"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_gray_rounded_4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            >
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/ic_baseline_add_24"
+            android:id="@+id/btn_add"
+            />
+
+    <com.openet.greenhup.customviews.CustomeFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:custom_font="@string/font_name_sfpro_display_regular"
+            android:textSize="14sp"
+            android:text="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/tv_amount"
+            android:layout_gravity="center_vertical"
+            />
+
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_remove_24"
+            android:id="@+id/btn_remove"
+            android:padding="4dp"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

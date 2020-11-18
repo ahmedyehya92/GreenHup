@@ -63,17 +63,18 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                    <com.am_development.greenhup.customviews.CustomeFontTextView
+                    <com.openet.greenhup.customviews.CustomeFontTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TOTAL"
+                            android:text="@string/total"
                             android:textColor="@color/brown_grey"
                             app:custom_font="@string/font_name_sfpro_display_regular" />
 
-                    <com.am_development.greenhup.customviews.CustomeFontTextView
+                    <com.openet.greenhup.customviews.CustomeFontTextView
+                            android:id="@+id/tv_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$4500"
+                            android:text="KWD 0.0"
                             android:textColor="@color/mossy_green"
                             android:textSize="18sp"
                             app:custom_font="@string/font_name_sfpro_display_bold" />
@@ -86,12 +87,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                <com.openet.greenhup.customviews.CustomeMaterialButtonFont
+                        android:id="@+id/btn_checkout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="32dp"
                         android:paddingVertical="20dp"
-                        android:text="CHECKOUT"
+                        android:text="@string/checkout"
                         android:textAppearance="@style/TextAppearance.AppCompat"
                         android:textColor="@color/white"
                         android:textSize="14sp"
@@ -114,10 +116,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tax"
+                    android:text="@string/tax"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -132,11 +134,12 @@
                     android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
                     android:textColor="#dddddd" />
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_tax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="$50"
+                    android:text="KWD 0.0"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:custom_font="@string/font_name_sfpro_display_bold" />
@@ -155,10 +158,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sub Total"
+                    android:text="@string/sub_total"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -173,11 +176,12 @@
                     android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
                     android:textColor="#dddddd" />
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_suptotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="$3950"
+                    android:text="KWD 0.0"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:custom_font="@string/font_name_sfpro_display_bold" />
@@ -197,17 +201,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/customeFontTextView2" />
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/customeFontTextView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Cart"
+                android:text="@string/cart_title"
                 android:textColor="@color/black"
                 app:custom_font="@string/font_name_hkgrotesk_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arcLayout"
+                android:id="@+id/lout_loading_interval_view_container"
+                >
+        </RelativeLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

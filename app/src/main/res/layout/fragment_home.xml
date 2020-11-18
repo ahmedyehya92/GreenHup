@@ -30,12 +30,12 @@
 
 
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:id="@+id/customeFontTextView"
+                <com.openet.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_featured_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
-                        android:text="Featured"
+                        android:text="@string/featured"
                         app:custom_font="@string/font_raleway_bold"
                         android:textColor="@color/dark_blue_grey"
                         android:textSize="24sp"
@@ -55,15 +55,15 @@
                         android:padding="10dp"
                         app:layout_constraintEnd_toStartOf="parent"
                         app:layout_constraintStart_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/customeFontTextView">
+                        app:layout_constraintTop_toBottomOf="@+id/tv_featured_label">
 
-                    <com.am_development.greenhup.customviews.CustomEditTextView
+                    <com.openet.greenhup.customviews.CustomEditTextView
                             android:id="@+id/et_search_query"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
-                            android:hint="Search"
+                            android:hint="@string/search"
                             app:custom_font="@string/font_name_sfpro_display_regular"
                             android:textColorHint="@color/mossy_green"
 
@@ -92,12 +92,26 @@
 
                         />
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
-                        android:id="@+id/customeFontTextView3"
+                <com.openet.greenhup.customviews.CustomRecyclerView
+                        android:id="@+id/rv_categories"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lout_main_offer"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_category_vendor_list" />
+
+
+                <com.openet.greenhup.customviews.CustomeFontTextView
+                        android:id="@+id/tv_packages_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Packages"
+                        android:text="@string/packages"
                         app:custom_font="@string/font_raleway_bold"
                         android:textColor="@color/dark_blue_grey"
                         android:textSize="24sp"
@@ -105,7 +119,8 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/rv_plants_horizontal_list" />
 
-                <com.am_development.greenhup.customviews.nonswipable_view_pager.NonSwipableViewPager
+
+                <com.openet.greenhup.customviews.nonswipable_view_pager.NonSwipableViewPager
                         android:id="@+id/view_pager_packages"
                         android:layout_width="0dp"
                         android:layout_height="200dp"
@@ -113,9 +128,9 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/customeFontTextView3" />
-
+                        app:layout_constraintTop_toBottomOf="@+id/tv_packages_label" />
 
                 <LinearLayout
                         android:id="@+id/lout_left_arrow_package"
@@ -161,20 +176,20 @@
 
                 </LinearLayout>
 
-                <com.am_development.greenhup.customviews.CustomeFontTextView
+                <com.openet.greenhup.customviews.CustomeFontTextView
                         android:id="@+id/tv_package_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
-                        android:text="Package Name"
+                        tools:text="Package Name"
                         app:custom_font="@string/font_name_circular_std_book"
                         android:textSize="22sp"
                         android:textColor="@color/mossy_green"
                         app:layout_constraintStart_toStartOf="@+id/view_pager_packages"
                         app:layout_constraintTop_toTopOf="@+id/view_pager_packages" />
 
-                <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                <com.openet.greenhup.customviews.CustomeMaterialButtonFont
                         android:id="@+id/tv_package_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -184,7 +199,7 @@
                         app:cornerRadius="33dp"
                         android:textColor="@color/white"
                         app:backgroundTint="@color/mossy_green"
-                        android:text="KWT 25"
+                        tools:text="KWT 25"
                         android:paddingStart="60dp"
                         android:paddingVertical="16dp"
                         android:paddingEnd="16dp"
@@ -200,16 +215,26 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lout_main_offer"
                         android:layout_width="match_parent"
                         android:layout_height="240dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/lout_left_arrow_package">
+
+                    <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.47"
+                            />
+
+
 
                     <LinearLayout
                             android:id="@+id/linearLayout6"
@@ -231,10 +256,11 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/arcLayout2"
+                            app:layout_constraintEnd_toStartOf="@id/guideline4"
+                            android:scaleType="centerCrop"
                             app:layout_constraintStart_toStartOf="@+id/linearLayout6"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ex_plant_png" />
+                            tools:srcCompat="@drawable/ex_plant_png" />
 
                     <com.github.florent37.arclayout.ArcLayout
                             android:id="@+id/arcLayout2"
@@ -264,20 +290,20 @@
                                     android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
-                                <com.am_development.greenhup.customviews.CustomeFontTextView
+                                <com.openet.greenhup.customviews.CustomeFontTextView
                                         android:id="@+id/tv_offer_percentage"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="8dp"
-                                        android:text="---- Get 40% off ---"
+                                        tools:text="---- Get 40% off ---"
                                         app:custom_font="@string/font_name_hkgrotesk_bold"
                                         android:textColor="@color/greyish_brown"
                                         android:textSize="12sp" />
 
-                                <com.am_development.greenhup.customviews.CustomeFontTextView
+                                <com.openet.greenhup.customviews.CustomeFontTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="SPECIAL OFFERS"
+                                        android:text="@string/special_offers"
                                         android:textColor="@color/greyish_brown"
                                         android:textSize="22sp"
                                         app:custom_font="@string/font_name_hkgrotesk_bold" />
@@ -298,19 +324,19 @@
                                             android:orientation="vertical"
                                             android:paddingHorizontal="5dp">
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:id="@+id/tv_day_offer"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="17"
+                                                tools:text="17"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="16sp"
                                                 app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="Days"
+                                                android:text="@string/days"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="8sp"
                                                 app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -328,19 +354,19 @@
                                             android:orientation="vertical"
                                             android:paddingHorizontal="5dp">
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:id="@+id/tv_hours_offer"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="22"
+                                                tools:text="22"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="16sp"
                                                 app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="Hours"
+                                                android:text="@string/hours"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="8sp"
                                                 app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -358,19 +384,19 @@
                                             android:orientation="vertical"
                                             android:paddingHorizontal="5dp">
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:id="@+id/tv_offer_minutes"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="22"
+                                                tools:text="22"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="16sp"
                                                 app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="Minutes"
+                                                android:text="@string/minutes"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="8sp"
                                                 app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -388,19 +414,19 @@
                                             android:orientation="vertical"
                                             android:paddingHorizontal="5dp">
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:id="@+id/tv_offer_seconds"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="03"
+                                                tools:text="03"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="16sp"
                                                 app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                        <com.am_development.greenhup.customviews.CustomeFontTextView
+                                        <com.openet.greenhup.customviews.CustomeFontTextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:text="Seconds"
+                                                android:text="@string/seconds"
                                                 android:textColor="@color/mossy_green"
                                                 android:textSize="8sp"
                                                 app:custom_font="@string/font_name_sfpro_display_regular" />
@@ -410,17 +436,17 @@
 
                                 </LinearLayout>
 
-                                <com.am_development.greenhup.customviews.CustomeFontTextView
+                                <com.openet.greenhup.customviews.CustomeFontTextView
                                         android:id="@+id/tv_offer_name"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="8dp"
-                                        android:text="Product Name"
+                                        tools:text="Product Name"
                                         android:textColor="@color/greyish_brown"
-                                        android:textSize="16sp"
+                                        android:textSize="20sp"
                                         app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                <com.am_development.greenhup.customviews.CustomeFontTextView
+                                <com.openet.greenhup.customviews.CustomeFontTextView
                                         android:id="@+id/tv_offer_details"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -428,19 +454,20 @@
                                         android:layout_marginTop="4dp"
                                         android:layout_marginEnd="16dp"
                                         android:gravity="center"
+                                        android:visibility="gone"
                                         android:maxLines="3"
-                                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                                        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                                         android:textColor="@color/greyish_brown"
                                         android:textSize="8sp"
                                         app:custom_font="@string/font_name_hkgrotesk_bold" />
 
-                                <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+                                <com.openet.greenhup.customviews.CustomeMaterialButtonFont
                                         android:id="@+id/btn_get_offer_now"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:paddingHorizontal="16dp"
                                         android:paddingVertical="5dp"
-                                        android:text="GET NOW"
+                                        android:text="@string/get_now"
                                         android:textAppearance="@style/TextAppearance.AppCompat"
                                         android:textColor="@color/white"
                                         app:backgroundTint="@color/frog_green"
@@ -469,16 +496,18 @@
         </androidx.core.widget.NestedScrollView>
 
         <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/lout_left_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/oval_gradient_vertical"
-                android:elevation="15dp"
+                android:elevation="50dp"
                 android:orientation="vertical"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/space">
+                app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintBottom_toBottomOf="@id/guideline"
+                >
 
 
             <ImageView
@@ -544,7 +573,7 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
         <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/lout_right_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -553,7 +582,8 @@
                 android:orientation="vertical"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/arcLayout"
-                app:layout_constraintTop_toTopOf="@+id/space2">
+                app:layout_constraintTop_toTopOf="@+id/guideline"
+                app:layout_constraintBottom_toBottomOf="@id/guideline">
 
             <ImageView
                     android:layout_width="wrap_content"
@@ -564,6 +594,17 @@
         </LinearLayout>
 
 
+
+        <RelativeLayout
+                android:id="@+id/lout_loading_interval_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arcLayout">
+
+        </RelativeLayout>
 
 
 

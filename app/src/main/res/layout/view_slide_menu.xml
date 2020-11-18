@@ -35,7 +35,7 @@
                 />
 
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/tv_status_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 />
 
 
-        <com.am_development.greenhup.customviews.CustomRecyclerView
+        <com.openet.greenhup.customviews.CustomRecyclerView
                 android:id="@+id/lv_slideMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 >
 
 
-            <com.am_development.greenhup.customviews.CustomeFontTextView
+            <com.openet.greenhup.customviews.CustomeFontTextView
                     android:id="@+id/tv_btn_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
 
         </LinearLayout>
 
-        <com.am_development.greenhup.customviews.CustomeFontTextView
+        <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/tv_version_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -31,7 +31,7 @@
             app:srcCompat="@drawable/logo_splash" />
 
 
-    <com.am_development.greenhup.customviews.CustomeFontTextView
+    <com.openet.greenhup.customviews.CustomeFontTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:custom_font="@string/font_name_sfpro_display_regular"

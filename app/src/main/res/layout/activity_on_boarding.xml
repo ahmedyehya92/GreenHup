@@ -13,7 +13,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.7" />
 
-    <com.am_development.greenhup.customviews.nonswipable_view_pager.NonSwipableViewPager
+    <com.openet.greenhup.customviews.nonswipable_view_pager.NonSwipableViewPager
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -82,7 +82,7 @@
                 android:padding="14dp"
                 >
 
-            <com.am_development.greenhup.customviews.CustomeMaterialButtonFont
+            <com.openet.greenhup.customviews.CustomeMaterialButtonFont
                     android:id="@+id/btn_next"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -90,7 +90,7 @@
                     app:backgroundTint="@color/mossy_green"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     app:cornerRadius="6dp"
-                    android:text="Next"
+                    android:text="@string/next"
                     android:textSize="18sp"
                     android:gravity="center"
                     />
