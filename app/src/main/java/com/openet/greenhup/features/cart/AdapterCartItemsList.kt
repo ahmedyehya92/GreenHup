@@ -148,6 +148,10 @@ class AdapterCartItemsList (
 
                     customListener?.onItemRemoveClickListener(model.id, position, model.quantity-1, model.type)
                 }
+
+                cartViewHolder.lout_delete.setOnClickListener {
+                    customListener?.onItemDeleteClickListener(model.id, position, model.type)
+                }
             }
             LOADING -> {
                 val loadingVH = holder as AdapterPlants.LoadingVH
@@ -193,6 +197,7 @@ class AdapterCartItemsList (
         val btn_add by lazy { itemView.findViewById<ImageView>(R.id.btn_add) }
         val btn_remove by lazy { itemView.findViewById<ImageView>(R.id.btn_remove) }
         val tv_quantity  by lazy { itemView.findViewById<CustomeFontTextView>(R.id.tv_quantity) }
+        val lout_delete by lazy {itemView.findViewById<LinearLayout>(R.id.lout_delete)}
     }
 
     inner class LoadingVH(itemView: View) :
@@ -212,6 +217,7 @@ class AdapterCartItemsList (
     interface customButtonListener {
         fun onItemAddClickListener(itemId: String, position: Int, newQuantity: Int, type: String)
         fun onItemRemoveClickListener(itemId: String, position: Int, newQuantity: Int, type: String)
+        fun onItemDeleteClickListener(itemId: String, position: Int, type: String)
     }
 
     fun setCustomButtonListner(listener: customButtonListener?) {

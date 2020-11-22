@@ -5,6 +5,7 @@ import android.util.Log
 import com.openet.greenhup.R
 import com.openet.usecases.usecases.AddProductToCartUseCase
 import com.openet.usecases.usecases.GetCartItemsUseCase
+import com.openet.usecases.usecases.RemoveItemFromCartUseCase
 import com.openet.usecases.usecases.StatePackageToCartUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -16,6 +17,7 @@ class CartImplPresenter (
     private val context: Context,
     private val getCartItemsUseCase: GetCartItemsUseCase = GetCartItemsUseCase(),
     private val addProductToCartUseCase: AddProductToCartUseCase= AddProductToCartUseCase(),
+    private val removeItemFromCartUseCase: RemoveItemFromCartUseCase= RemoveItemFromCartUseCase(),
     private val statePackageToCartUseCase: StatePackageToCartUseCase= StatePackageToCartUseCase(),
     private val disposables: CompositeDisposable = CompositeDisposable()
 ): CartPresenter {
@@ -108,6 +110,35 @@ class CartImplPresenter (
         }
 
 
+    }
+
+    override fun removeItemFromCart(id: String, position: Int, isProduct: Boolean) {
+        view.showLoading()
+        removeItemFromCartUseCase.invoke(id, isProduct)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                view.finishLoading()
+                view.removeItemFromCart(position)
+            },{
+                Log.e(CartImplPresenter::class.java.simpleName, "error code= ${it.message}")
+                when(it)
+                {
+                    is HttpException -> {
+                        when(it.code())
+                        {
+                            401 ->{
+                                view.faildLoading(context.getString(R.string.you_must_login))
+                            }
+                            else -> view.connectionError()
+                        }
+                    }
+
+                    else -> view.connectionError()
+                }
+
+            })
+            .also { disposables.add(it) }
     }
 
 }

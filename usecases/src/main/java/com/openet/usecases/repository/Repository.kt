@@ -55,6 +55,7 @@ interface Repository {
     fun getUserInfo(): Single<ResponseUserInfo>
     fun updateUserInfoUseCase(name: String, phone: String, country: String, city: String, address: String, ziip: String): Single<ResponseUserInfoUpdate>
     fun getCountries(): Single<ResponseCountries>
+    fun removeProductFromCart(productId: String): Single<ResponseAddToCart>
 }
 
 class RepositoryImplementer (
@@ -121,6 +122,7 @@ class RepositoryImplementer (
     ) = server.updateUserInfo(name, phone, country, city, address, ziip)
 
     override fun getCountries(): Single<ResponseCountries> = server.getCountries()
+    override fun removeProductFromCart(productId: String): Single<ResponseAddToCart> = server.removeProductFromCart(productId)
 
 
     override fun getRefreshToken(): String {

@@ -140,7 +140,7 @@ interface CafApis {
     @POST("removeitemfromcart")
     fun removeProductFromCart(
         @Query("product") productId: String
-    ): Single<ResponseFavoriteProduct>
+    ): Single<ResponseAddToCart>
 
     @POST("requestservice")
     fun requestService(
@@ -176,6 +176,8 @@ interface CafApis {
 
     @GET("countries")
     fun getCountries(): Single<ResponseCountries>
+
+
 
 }
 

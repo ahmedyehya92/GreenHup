@@ -111,4 +111,5 @@ Through online chatting on the website</string>
     <string name="item_code">Item Code</string>
     <string name="successful_update">Successful Update</string>
     <string name="remove">Remove</string>
+    <string name="check_your_inbox">We\'ll send the email from Green Hub, so you can quickly search for it. If it isn\'t in your inbox, check your folders.</string>
 </resources>

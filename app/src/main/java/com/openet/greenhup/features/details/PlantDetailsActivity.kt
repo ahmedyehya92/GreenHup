@@ -3,14 +3,25 @@ package com.openet.greenhup.features.details
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.webkit.WebSettings
-import android.widget.*
+import android.widget.ImageView
+import android.widget.TableRow
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.TextViewCompat
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.openet.entities.KEY_PLANT
 import com.openet.entities.Plant
 import com.openet.entities.SliderItem
@@ -19,9 +30,9 @@ import com.openet.greenhup.base.BaseActivity
 import com.openet.greenhup.core.RequestIntervalHandler2
 import com.openet.greenhup.customviews.CustomeFontTextView
 import com.openet.greenhup.features.sign.SignActivity
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.ByteArrayOutputStream
 
 
 class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
@@ -37,7 +48,7 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
     private val tryAgainTriggerObserever = Observer<Int> {
         when (it) {
-            1 -> plant?.let {plant ->
+            1 -> plant?.let { plant ->
                 presenter.getDetails(plant.id)
             }
 
@@ -97,6 +108,42 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
         Glide.with(this)
             .load(plant.imageUrl)
+            .listener(object : RequestListener<Drawable> {
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    return false
+                }
+
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    dataSource: DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    im_plant.setOnClickListener {
+                        im_plant.invalidate()
+                        val drawable: BitmapDrawable = im_plant.getDrawable() as BitmapDrawable
+                        val bitmap: Bitmap = drawable.getBitmap()
+
+
+                        val stream = ByteArrayOutputStream()
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                        val byteArray: ByteArray = stream.toByteArray()
+
+                        val b = Bundle()
+                        b.putByteArray("image", byteArray)
+                        DialogFullScreenImage.newInstance(byteArray).show(supportFragmentManager,"DialogFullScreenImage")
+                    }
+
+                    return false
+                }
+
+            })
             .into(im_plant)
         tv_price.text= "${getString(R.string.start_from)} ${getString(R.string.currency)} ${plant.price}"
         tv_vendor_name.text= plant.vendorName
@@ -171,7 +218,11 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
                 priceTextView?.text= "${getString(R.string.currency)} ${specsCatItem.price.toFloat()}"
                 valueRow?.addView(priceTextView)
 
-                val mInflater = layoutInflater.inflate(R.layout.view_amount_changer, tabLayout, false)
+                val mInflater = layoutInflater.inflate(
+                    R.layout.view_amount_changer,
+                    tabLayout,
+                    false
+                )
 
                 val tv_amount= mInflater.findViewById<CustomeFontTextView>(R.id.tv_amount)
                 val btn_add= mInflater.findViewById<ImageView>(R.id.btn_add)
@@ -183,14 +234,20 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
                 btn_add.setOnClickListener {
                     this.tvAmount= tv_amount
-                    presenter.changeCartItemAmount(specsCatItem.id,tv_amount.text.toString().toInt()+1)
+                    presenter.changeCartItemAmount(
+                        specsCatItem.id,
+                        tv_amount.text.toString().toInt() + 1
+                    )
                     //tv_amount.text="3"
                 }
 
                 btn_remove.setOnClickListener {
                     if(tv_amount.text.toString().toInt() != 0) {
                         this.tvAmount = tv_amount
-                        presenter.changeCartItemAmount(specsCatItem.id,tv_amount.text.toString().toInt()-1)
+                        presenter.changeCartItemAmount(
+                            specsCatItem.id,
+                            tv_amount.text.toString().toInt() - 1
+                        )
                     }
                     //tv_amount.text="2"
                 }
@@ -211,7 +268,7 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
         }
 
     override fun changeItemAmount(newQuantity: Int) {
-        Log.e("PlantDetailsAct","AddedToCart")
+        Log.e("PlantDetailsAct", "AddedToCart")
         tvAmount?.text= newQuantity.toString()
     }
 
@@ -274,7 +331,7 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
     private fun addHtmlDescriptionToWebView(details: String?) {
 
-        details?.let {details ->
+        details?.let { details ->
             if(details.isEmpty()) {
                 tv_details_label.visibility = View.GONE
                 web_view_details.visibility= View.GONE

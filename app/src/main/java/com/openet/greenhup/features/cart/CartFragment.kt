@@ -80,7 +80,7 @@ class CartFragment : Fragment(), CartView, AdapterCartItemsList.customButtonList
         rv_cart.adapter= adapterCartItemsList
 
         setupRequestHandlerView()
-        presenter.getCart()
+        //presenter.getCart()
 
         
 
@@ -139,6 +139,13 @@ class CartFragment : Fragment(), CartView, AdapterCartItemsList.customButtonList
         updateTotalPrice()
     }
 
+    override fun removeItemFromCart(position: Int) {
+        //cartList.removeAt(position)
+        adapterCartItemsList?.remove(cartList[position])
+        adapterCartItemsList?.notifyItemChanged(position)
+        updateTotalPrice()
+    }
+
     override fun showLoading() {
         requestIntervalHandler.showLoadingView(null)
     }
@@ -165,10 +172,16 @@ class CartFragment : Fragment(), CartView, AdapterCartItemsList.customButtonList
             presenter.changeCartItemAmount(itemId, position, newQuantity, type)
     }
 
+    override fun onItemDeleteClickListener(itemId: String, position: Int, type: String) {
+        val isProduct= type=="product"
+        presenter.removeItemFromCart(itemId,position, isProduct)
+    }
+
     override fun onResume() {
         super.onResume()
-  /*      adapterCartItemsList?.clear()
-        presenter.getCart()*/
+        Log.e("CartFragment", "onResume")
+        adapterCartItemsList?.clear()
+        presenter.getCart()
        //
      //   presenter.getCart()
     }
@@ -202,6 +215,8 @@ class CartFragment : Fragment(), CartView, AdapterCartItemsList.customButtonList
         }
 
     }
+
+
 
 
 }

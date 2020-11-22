@@ -48,6 +48,12 @@ data class UserInfo(
     val zip: String
 )
 
+data class ResponseRemoveProductFromCart(
+    @field:SerializedName("response") val message: String
+)
+
+
+
 data class ResponseUserInfoUpdate(
     val user: UserResponseUserInfoUpdate
 )

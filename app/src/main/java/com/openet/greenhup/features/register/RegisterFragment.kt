@@ -1,16 +1,20 @@
 package com.openet.greenhup.features.register
 
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-
 import com.openet.greenhup.R
 import com.openet.greenhup.core.*
 import kotlinx.android.synthetic.main.fragment_register.*
+import java.io.IOException
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,7 +72,13 @@ class RegisterFragment : Fragment(), RegisterView {
                 et_confirm_password.isConfirmPasswordValid(et_password.textValue()))
                 //&& et_phone.isValidEditText())
 
-                presenter.register(et_name.textValue(), et_email.textValue(), et_password.textValue(), et_confirm_password.textValue(), "0")
+                presenter.register(
+                    et_name.textValue(),
+                    et_email.textValue(),
+                    et_password.textValue(),
+                    et_confirm_password.textValue(),
+                    "0"
+                )
         }
     }
 
@@ -109,7 +119,7 @@ class RegisterFragment : Fragment(), RegisterView {
     }
 
     override fun connectionError(message: String?) {
-        Toast.makeText(context,message?:getString(R.string.unknown_error), Toast.LENGTH_LONG).show()
+        Toast.makeText(context, message ?: getString(R.string.unknown_error), Toast.LENGTH_LONG).show()
 
     }
 
@@ -129,5 +139,58 @@ class RegisterFragment : Fragment(), RegisterView {
     fun setCustomButtonListner(listener: customButtonListener?) {
         customListener = listener
     }
+
+
+    /*fun getAddress(lat: Double, lng: Double) {
+        val geocoder = Geocoder(requireContext(), Locale.getDefault())
+        try {
+            val addresses: List<Address> = geocoder.getFromLocation(lat, lng, 1)
+            val obj: Address = addresses[0]
+            var add: String = obj.getAddressLine(0)
+            GUIStatics.currentAddress = (obj.getSubAdminArea().toString() + ","
+                    + obj.getAdminArea())
+            GUIStatics.latitude = obj.getLatitude()
+            GUIStatics.longitude = obj.getLongitude()
+            GUIStatics.currentCity = obj.getSubAdminArea()
+            GUIStatics.currentState = obj.getAdminArea()
+            add = """
+            $add
+            ${obj.getCountryName()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getCountryCode()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getAdminArea()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getPostalCode()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getSubAdminArea()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getLocality()}
+            """.trimIndent()
+            add = """
+            $add
+            ${obj.getSubThoroughfare()}
+            """.trimIndent()
+            Log.v("IGA", "Address$add")
+            // Toast.makeText(this, "Address=>" + add,
+            // Toast.LENGTH_SHORT).show();
+
+            // TennisAppActivity.showDialog(add);
+        } catch (e: IOException) {
+            // TODO Auto-generated catch block
+            e.printStackTrace()
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show()
+        }
+    }*/
 
 }

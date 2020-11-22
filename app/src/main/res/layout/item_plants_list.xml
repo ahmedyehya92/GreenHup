@@ -24,6 +24,7 @@
                 android:layout_marginBottom="14dp"
                 android:text="INDOOR"
                 android:alpha="0.5"
+                android:textSize="12sp"
                 android:textColor="@color/bluish_green"
                 app:custom_font="@string/font_hkgrotesk_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +39,7 @@
                 android:lines="2"
                 android:maxLines="2"
                 android:ellipsize="end"
+                android:textSize="13sp"
                 android:textColor="@color/charcoal_grey"
                 app:custom_font="@string/font_hkgrotesk_semibold"
                 app:layout_constraintBottom_toTopOf="@+id/tv_position"
@@ -53,9 +55,9 @@
                 android:textColor="@color/bluish_green"
                 android:textSize="14sp"
                 app:custom_font="@string/font_hkgrotesk_semibold"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_position"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_name" />
+                app:layout_constraintTop_toTopOf="@+id/tv_position" />
 
         <ImageView
                 android:id="@+id/im_plant"

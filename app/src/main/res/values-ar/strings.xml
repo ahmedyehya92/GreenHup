@@ -93,4 +93,5 @@
     <string name="arabic">العربية</string>
     <string name="settings">الإعدادات</string>
     <string name="remove">حذف</string>
+    <string name="check_your_inbox">سنرسل رسالة البريد الإلكتروني من جرين هب ، بحيث يمكنك البحث عنها بسرعة.فإذا لم تكن في صندوق الوارد، فتحقق من المجلدات الأخرى.</string>
 </resources>

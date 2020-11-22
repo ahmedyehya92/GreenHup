@@ -27,6 +27,8 @@ class HomeImplPresenter
                 it.home.mainoffer?.let {offers ->
                     if(offers.isNotEmpty())
                         view.addMainOffer(offers[0])
+                    else
+                        view.addMainOffer(null)
                 }
 
                 view.addCategories(it.home.categories)
