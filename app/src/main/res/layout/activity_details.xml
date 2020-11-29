@@ -189,14 +189,48 @@
             >
 
         <LinearLayout
+                android:id="@+id/btn_view_cart"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:background="@color/mossy_green"
+                android:orientation="horizontal"
                 app:cornerRadius="0dp"
                  >
+
+            <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_shopping_cart_badge"
+                        />
+
+                <RelativeLayout
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/shape_badge_white_boarder_gray"
+                        android:layout_alignParentEnd="true"
+                        >
+
+                    <com.openet.greenhup.customviews.CustomeFontTextView
+                            app:custom_font="@string/font_name_hkgrotesk_bold"
+                            android:id="@+id/tv_cart_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="9sp"
+                            android:textColor="@color/black_text"
+                            android:layout_centerInParent="true"
+                            />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
@@ -204,6 +238,7 @@
                     app:custom_font="@string/font_name_circular_std_book"
                     android:text="@string/buy_it_now"
                     android:textSize="22sp"
+                    android:layout_marginStart="8dp"
                     />
 
         </LinearLayout>
@@ -265,6 +300,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:src="@drawable/ex_plant_png" />
+
+                    <RelativeLayout
+                            android:id="@+id/lout_loading_interval_view_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -430,16 +472,5 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <RelativeLayout
-            android:id="@+id/lout_loading_interval_view_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/arcLayout">
-
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

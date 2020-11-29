@@ -1,6 +1,8 @@
 package com.openet.greenhup.features.about
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -37,15 +39,21 @@ class AboutActivity : BaseActivity(), AboutView {
     }
 
     private fun addHtmlDescriptionToWebView(about: String) {
-                val webSettings: WebSettings = web_view_about.settings
+     /*           val webSettings: WebSettings = web_view_about.settings
                 webSettings.javaScriptEnabled = true
                 webSettings.lightTouchEnabled = true;
                 webSettings.javaScriptEnabled = true;
                 webSettings.setGeolocationEnabled(true);
 
-        web_view_about.loadData(about, "text/html", "UTF-8");
-
+        web_view_about.loadData(about, "text/html", "UTF-8")*/
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            web_view_about.setText(Html.fromHtml(about, Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            web_view_about.setText(Html.fromHtml(about));
         }
+
+
+    }
 
     override fun showLoading() {
         requestIntervalHandler.showLoadingView(null)

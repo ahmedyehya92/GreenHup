@@ -20,55 +20,48 @@
                 android:id="@+id/tv_position"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_marginBottom="14dp"
-                android:text="INDOOR"
+                android:layout_marginStart="8dp"
                 android:alpha="0.5"
-                android:textSize="12sp"
+                android:text="INDOOR"
                 android:textColor="@color/bluish_green"
+                android:textSize="12sp"
                 app:custom_font="@string/font_hkgrotesk_semibold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
         <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/tv_name"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="ANGELICA"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
                 android:lines="2"
                 android:maxLines="2"
-                android:ellipsize="end"
-                android:textSize="13sp"
+                android:text="ANGELICA"
                 android:textColor="@color/charcoal_grey"
+                android:textSize="13sp"
                 app:custom_font="@string/font_hkgrotesk_semibold"
-                app:layout_constraintBottom_toTopOf="@+id/tv_position"
-                app:layout_constraintEnd_toStartOf="@+id/tv_price"
-                app:layout_constraintStart_toStartOf="@+id/tv_position" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/im_plant" />
 
         <com.openet.greenhup.customviews.CustomeFontTextView
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="11dp"
                 android:text="$400"
                 android:textColor="@color/bluish_green"
-                android:textSize="14sp"
-                app:custom_font="@string/font_hkgrotesk_semibold"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_position"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_position" />
+                android:textSize="16sp"
+                app:custom_font="@string/font_name_hkgrotesk_bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_position"
+                app:layout_constraintTop_toBottomOf="@+id/tv_position" />
 
         <ImageView
                 android:id="@+id/im_plant"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="8dp"
+                android:layout_height="210dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintBottom_toTopOf="@+id/tv_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

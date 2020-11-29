@@ -1,5 +1,6 @@
 package com.openet.greenhup.features.main
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -15,12 +16,16 @@ import com.openet.greenhup.features.services.ServicesActivity
 import com.openet.greenhup.features.sign.SignActivity
 import com.openet.greenhup.features.splash.SplashActivity
 import com.google.android.material.tabs.TabLayout
+import com.openet.entities.KEY_PLANT
+import com.openet.entities.OPEN_CART
+import com.openet.entities.Plant
+import com.openet.greenhup.features.details.PlantDetailsActivity
 import com.openet.greenhup.features.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_slide_menu.*
 
 class MainActivity : BaseActivity(), AdapterSlideMenu.CustomeListener {
-
+    var openCart= false
     var adapterSlideMenuList: AdapterSlideMenu? = null
     val menuItemsListNav: ArrayList<ItemNovigtionMenu> = ArrayList()
     private var drawerToggle: ActionBarDrawerToggle? = null
@@ -31,7 +36,9 @@ class MainActivity : BaseActivity(), AdapterSlideMenu.CustomeListener {
         setupActionBar()
         setupSlideMenu()
         checkLoginStatus()
-
+        setInitiateValues()
+        if (openCart)
+            viewPager.currentItem= 1
 
 
 
@@ -184,4 +191,18 @@ class MainActivity : BaseActivity(), AdapterSlideMenu.CustomeListener {
         checkLoginStatus()
         super.onResume()
     }
+
+
+    companion object {
+        fun instantiateIntent(context: Context, openCart: Boolean): Intent {
+            return Intent(context, MainActivity::class.java).apply { this.putExtra(
+                OPEN_CART, openCart
+            ) }
+        }
+    }
+
+    private fun setInitiateValues() {
+        openCart= intent.getBooleanExtra(OPEN_CART, false)
+    }
+
 }

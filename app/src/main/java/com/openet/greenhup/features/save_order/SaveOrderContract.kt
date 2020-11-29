@@ -10,5 +10,5 @@ interface SaveOrderView: LoadingHandler{
 
 interface SaveOrderPresenter: DefaultLifecycleObserver
 {
-    fun saveOrder(comments: String, name: String, phone: String, email: String, address: String)
+    fun saveOrder(comments: String, name: String, phone: String, email: String, address: String, paymentMethod: String="1")
 }

@@ -198,8 +198,19 @@ class CartFragment : Fragment(), CartView, AdapterCartItemsList.customButtonList
             subTotal += it.totalPrice
         }
 
+        var deliveryFees=0.0F
+
+        if(subTotal<=20 && subTotal!=0.0F)
+            deliveryFees= 2.0F
+
+
+        else
+            deliveryFees= 0.0F
+
+        tv_delivery_fees.text= "${getString(R.string.currency)} $deliveryFees"
+
         tv_suptotal.text = "${getString(R.string.currency)} ${subTotal}"
-        tv_total.text= "${getString(R.string.currency)} ${(subTotal+ tax)}"
+        tv_total.text= "${getString(R.string.currency)} ${(subTotal+ tax+deliveryFees)}"
 
         adapterCartItemsList?.let {
             btn_checkout.isEnabled = it.itemCount != 0

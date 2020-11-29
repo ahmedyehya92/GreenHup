@@ -29,6 +29,7 @@ import com.openet.greenhup.R
 import com.openet.greenhup.base.BaseActivity
 import com.openet.greenhup.core.RequestIntervalHandler2
 import com.openet.greenhup.customviews.CustomeFontTextView
+import com.openet.greenhup.features.main.MainActivity
 import com.openet.greenhup.features.sign.SignActivity
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,6 +41,7 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
     var tvAmount: CustomeFontTextView?= null
     private var favorited = false
     private val REQUEST_CODE_LOGIN = 105
+    private val addedPlantsIds: MutableList<Int> = ArrayList()
     private val presenter: PlantDetailsPresenter by lazy {
         PlantDetailsImplPresenter(this, this)
     }
@@ -78,6 +80,10 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
         //plant?.let { addDetails(it) }
 
+        btn_view_cart.setOnClickListener {
+            startActivity(MainActivity.instantiateIntent(this, true))
+            finishAffinity()
+        }
 
     }
 
@@ -90,7 +96,7 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
 
     override fun addDetails(plant: Plant) {
-
+        tv_cart_badge.text= plant.cartItemsCount.toString()
         tv_name.text= plant.name
 
         favorite_select.isSelected= plant.isliked
@@ -242,13 +248,21 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
                 }
 
                 btn_remove.setOnClickListener {
-                    if(tv_amount.text.toString().toInt() != 0) {
+                    if(tv_amount.text.toString().toInt() > 1) {
                         this.tvAmount = tv_amount
                         presenter.changeCartItemAmount(
                             specsCatItem.id,
                             tv_amount.text.toString().toInt() - 1
                         )
                     }
+
+                    else
+                    {
+                        this.tvAmount = tv_amount
+                        presenter.removeItemFromCart(specsCatItem.id)
+                    }
+
+
                     //tv_amount.text="2"
                 }
 
@@ -267,14 +281,47 @@ class PlantDetailsActivity : BaseActivity(), PlantDetailsView {
 
         }
 
-    override fun changeItemAmount(newQuantity: Int) {
+    private fun addToCartCheckIfBadgeNumberWillChange(plantId: Int) {
+        if(addedPlantsIds.size==0)
+        {
+            addedPlantsIds.add(plantId)
+            Log.e("PlantDetailsActivity", "added")
+            Log.e("PlantDetailsActivity", "badge= ${(tv_cart_badge.text.toString().toInt()+1).toString()}")
+            tv_cart_badge.text = (tv_cart_badge.text.toString().toInt()+1).toString()
+        }
+        else {
+            addedPlantsIds.forEach {
+                if (it == plantId)
+                    return
+                else {
+                    addedPlantsIds.add(plantId)
+                    Log.e("PlantDetailsActivity", "added")
+                    Log.e(
+                        "PlantDetailsActivity",
+                        "badge= ${(tv_cart_badge.text.toString().toInt() + 1).toString()}"
+                    )
+                    tv_cart_badge.text = (tv_cart_badge.text.toString().toInt() + 1).toString()
+                }
+            }
+        }
+    }
+
+    override fun changeItemAmount(newQuantity: Int, plantId: Int) {
         Log.e("PlantDetailsAct", "AddedToCart")
+        if(newQuantity==1)
+            addToCartCheckIfBadgeNumberWillChange(plantId)
         tvAmount?.text= newQuantity.toString()
     }
 
     override fun changeFavoriteState(favoriteState: Boolean) {
         favorited = favoriteState
         favorite_select.isSelected= favoriteState
+    }
+
+    override fun removeItemFromCart(id: String) {
+        addedPlantsIds.remove(id.toInt())
+        tv_cart_badge.text = (tv_cart_badge.text.toString().toInt() - 1).toString()
+        tvAmount?.text= "0"
     }
 
     private fun setSlider(gallery: MutableList<SliderItem>?) {

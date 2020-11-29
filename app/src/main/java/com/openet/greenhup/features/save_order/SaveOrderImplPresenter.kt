@@ -20,10 +20,11 @@ class SaveOrderImplPresenter (
         name: String,
         phone: String,
         email: String,
-        address: String
+        address: String,
+        paymentMethod: String
     ) {
         view.showLoading()
-        saveOrderUseCase(comments, name, phone, email, address)
+        saveOrderUseCase(comments, name, phone, email, address, paymentMethod)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

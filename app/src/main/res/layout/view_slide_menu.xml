@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     app:custom_font="@string/font_name_circular_std_book"
                     android:textSize="14sp"
-                    android:text="Logout"
+                    android:text="@string/menu_item_logout"
                     android:layout_marginStart="24dp"
                     />
 

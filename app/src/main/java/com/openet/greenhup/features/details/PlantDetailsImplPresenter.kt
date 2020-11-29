@@ -5,9 +5,7 @@ import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import com.openet.greenhup.R
 import com.openet.greenhup.features.cart.CartImplPresenter
-import com.openet.usecases.usecases.AddProductToCartUseCase
-import com.openet.usecases.usecases.FavoriteUseCase
-import com.openet.usecases.usecases.GetPlantDetailsUseCase
+import com.openet.usecases.usecases.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -16,14 +14,16 @@ import retrofit2.HttpException
 class PlantDetailsImplPresenter(
     private val view: PlantDetailsView,
     private val context: Context,
-    private val getCategoryProductsUseCase: GetPlantDetailsUseCase = GetPlantDetailsUseCase(),
+    private val getPlantDetailsUseCase: GetPlantDetailsUseCase = GetPlantDetailsUseCase(),
+    private val tokenUseCase: TokenUseCase= TokenUseCase(),
     private val favoriteUseCase: FavoriteUseCase= FavoriteUseCase(),
+    private val removeItemFromCartUseCase: RemoveItemFromCartUseCase = RemoveItemFromCartUseCase(),
     private val addProductToCartUseCase: AddProductToCartUseCase= AddProductToCartUseCase(),
     private val disposables: CompositeDisposable = CompositeDisposable()
 ) : PlantDetailsPresenter{
     override fun getDetails(plantId: String) {
         view.showLoading()
-        getCategoryProductsUseCase(plantId)
+        getPlantDetailsUseCase(plantId, tokenUseCase.isLoggedIn)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -43,7 +43,7 @@ class PlantDetailsImplPresenter(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 view.finishLoading()
-                view.changeItemAmount(newQuantity)
+                view.changeItemAmount(newQuantity, id.toInt())
             },{
                 Log.e(PlantDetailsImplPresenter::class.java.simpleName, "error= ${it.message}")
                 Log.e(CartImplPresenter::class.java.simpleName, "error code= ${it.message}")
@@ -89,6 +89,35 @@ class PlantDetailsImplPresenter(
 
                     else -> view.faildLoading(context.getString(R.string.error_connection))
                 }
+            })
+            .also { disposables.add(it) }
+    }
+
+    override fun removeItemFromCart(id: String) {
+        view.showLoading()
+        removeItemFromCartUseCase.invoke(id, true)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                view.finishLoading()
+                view.removeItemFromCart(id)
+            },{
+                Log.e(CartImplPresenter::class.java.simpleName, "error code= ${it.message}")
+                when(it)
+                {
+                    is HttpException -> {
+                        when(it.code())
+                        {
+                            401 ->{
+                                view.faildLoading(context.getString(R.string.you_must_login))
+                            }
+                            else -> view.connectionError()
+                        }
+                    }
+
+                    else -> view.connectionError()
+                }
+
             })
             .also { disposables.add(it) }
     }

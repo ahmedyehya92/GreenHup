@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="8dp"
+        >
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica"
+                    android:textSize="24sp"
+                    android:textColor="@color/black_text"
+                    android:text="@string/order_id"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica"
+                    android:textSize="24sp"
+                    android:textColor="@color/black_text"
+                    android:text="55"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="@string/date"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="2020-11-26"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="REF.CODE"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="261515522"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="PAID?:"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="No Pay Online"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="PAY METHOD?:"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="Cash On Delivery"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="TOTAL:"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="KWD 10"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_bold"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="STATUS"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_raleway_medium"
+                    android:textSize="13sp"
+                    android:textColor="@color/black_text"
+                    android:text="Requested"
+                    android:layout_marginStart="8dp"
+                    />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

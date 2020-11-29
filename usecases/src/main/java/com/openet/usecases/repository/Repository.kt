@@ -31,6 +31,7 @@ interface Repository {
     fun vendors(): Single<ResponseVendors>
     fun categoryProducts(categoryId: String, page:Int): Single<ResponseCategoryProducts>
     fun plantDetails(plantId: String): Single<ResponsePlantDetails>
+    fun plantDetailsAuthorized(plantId: String): Single<ResponsePlantDetails>
     fun packageDetails(packageId: String): Single<ResponsePackageDetails>
     fun searchProducts(query: String, page: Int): Single<ResponseSearchProducts>
     fun getCartItems(): Single<ResponseCart>
@@ -49,9 +50,10 @@ interface Repository {
         name: String,
         phone: String,
         email: String,
-        address: String
+        address: String,
+        paymentMethod: String
     ): Single<ResponseSaveOrder>
-    fun getAbout(): Single<ResponseAbout>
+    fun getAbout(lang: String): Single<ResponseAbout>
     fun getUserInfo(): Single<ResponseUserInfo>
     fun updateUserInfoUseCase(name: String, phone: String, country: String, city: String, address: String, ziip: String): Single<ResponseUserInfoUpdate>
     fun getCountries(): Single<ResponseCountries>
@@ -75,6 +77,8 @@ class RepositoryImplementer (
 
     override fun categoryProducts(categoryId: String, page: Int): Single<ResponseCategoryProducts> = server.categoryProducts(categoryId, page)
     override fun plantDetails(plantId: String): Single<ResponsePlantDetails> = server.plantDetails(plantId)
+    override fun plantDetailsAuthorized(plantId: String): Single<ResponsePlantDetails> = server.plantDetailsAuthorized(plantId)
+
     override fun packageDetails(packageId: String): Single<ResponsePackageDetails> = server.packageDetails(packageId)
     override fun searchProducts(query: String, page: Int): Single<ResponseSearchProducts> = server.searchProducts(query, page)
     override fun getCartItems(): Single<ResponseCart> = server.getCartItems()
@@ -107,10 +111,11 @@ class RepositoryImplementer (
         name: String,
         phone: String,
         email: String,
-        address: String
-    ): Single<ResponseSaveOrder> = server.saveOrder(comments, name, phone, email, address)
+        address: String,
+        paymentMethod: String
+    ): Single<ResponseSaveOrder> = server.saveOrder(comments, name, phone, email, address, paymentMethod)
 
-    override fun getAbout(): Single<ResponseAbout> = server.getAbout()
+    override fun getAbout(lang: String): Single<ResponseAbout> = server.getAbout()
     override fun getUserInfo(): Single<ResponseUserInfo> = server.getUserInfo()
     override fun updateUserInfoUseCase(
         name: String,

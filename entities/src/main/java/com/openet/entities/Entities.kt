@@ -151,7 +151,8 @@ data class Plant(
     @field:SerializedName("sellername") val vendorName: String?= null,
     @field:SerializedName("specs_cats") val specsCats: MutableList<SpecsCatItem>?= null,
     @field:SerializedName("specslist") val specsList: MutableList<Specification>,
-    @field:SerializedName("code") val code: String
+    @field:SerializedName("code") val code: String,
+    @field:SerializedName("cartitemscount") val cartItemsCount: Int
     ): Serializable
 
 data class SpecsCatItem(
@@ -351,6 +352,7 @@ const val PREF_KEY_PASSWORD = "PREF_KEY_PASSWORD"
 const val KEY_SEARCH_QUERY= "KEY_SEARCH_QUERY"
 const val KEY_CATEGORY_ID= "KEY_CATEGORY_ID"
 const val KEY_PLANT= "KEY_PLANT"
+const val OPEN_CART= "OPEN_CART"
 const val KEY_PACKAGE= "KEY_PACKAGE"
 const val KEY_SERVICE="KEY_SERVICE"
 

@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingHorizontal="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/cardView"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -148,10 +148,51 @@
         </LinearLayout>
 
         <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery_fees"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:custom_font="@string/font_name_sfpro_display_regular" />
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+                    android:textColor="#dddddd" />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_delivery_fees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="KWD 0.0"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:custom_font="@string/font_name_sfpro_display_bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
                 android:id="@+id/linearLayout5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
                 android:paddingHorizontal="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout3"

@@ -107,6 +107,11 @@ interface CafApis {
                      @Query("lang") lang: String= Locale.getDefault().language
     ): Single<ResponsePlantDetails>
 
+    @GET("product_details_loggedin/{plant_id}")
+    fun plantDetailsAuthorized(@Path("plant_id") plantId: String,
+                     @Query("lang") lang: String= Locale.getDefault().language
+    ): Single<ResponsePlantDetails>
+
     @GET("viewcart")
     fun getCartItems(@Query("lang") lang: String= Locale.getDefault().language): Single<ResponseCart>
 
@@ -155,7 +160,8 @@ interface CafApis {
         @Query("name") name: String,
         @Query("phone") phone: String,
         @Query("email") email: String,
-        @Query("address") address: String
+        @Query("address") address: String,
+        @Query("paymethod") paymentMethod: String
     ): Single<ResponseSaveOrder>
 
     @GET("userinfo")

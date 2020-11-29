@@ -49,6 +49,7 @@ class SaveOrderActivity : BaseActivity(), SaveOrderView {
 
     override fun successfulSaveOrder(response: ResponseSaveOrderEntry) {
         startActivity(PayActivity.instantiateIntent(this, response))
+        finish()
     }
 
     override fun showLoading() {
