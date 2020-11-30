@@ -33,7 +33,7 @@ class AdapterProducts (
         when (viewType) {
             ITEM -> {
                 val viewItem: View = mInflater.inflate(
-                    R.layout.item_plants_list, parent, false
+                    R.layout.item_plants_list_2, parent, false
                 )
                 viewHolder = PlantViewHolder(viewItem)
             }

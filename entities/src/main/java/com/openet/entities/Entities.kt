@@ -105,6 +105,25 @@ data class Contact(
     val longitude: String= "-122.4194"
 )
 
+data class Order(
+    val refcode: String,
+    val name: String,
+    val phone: String,
+    val email: String,
+    val address: String,
+    val comments: String,
+    val delivaryfees: Int,
+    val ordertotal: String,
+    val grandtotal: String,
+    val paymentmethod: String,
+    val paid: String,
+    val orderdate: String
+)
+
+data class ResponseMyOrders (
+    val response: MutableList<Order>
+)
+
 data class MPackage (
     @field:SerializedName("id") val id: String,
     @field:SerializedName("name") val name: String,

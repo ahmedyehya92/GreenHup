@@ -183,6 +183,8 @@ interface CafApis {
     @GET("countries")
     fun getCountries(): Single<ResponseCountries>
 
+    @GET("myorders")
+    fun getMyOrders(): Single<ResponseMyOrders>
 
 
 }

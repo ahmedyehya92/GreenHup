@@ -29,7 +29,8 @@ class PayActivity : BaseActivity() {
         webSettings.javaScriptEnabled = true
         webSettings.setGeolocationEnabled(true)
         response?.let {response ->
-            web_view_pay.loadUrl("https://www.api.greenhub.shop/api/gopay/${response.order_id}/${response.order_reference}/${response.gtotal}")
+            //web_view_pay.loadUrl("https://www.api.greenhub.shop/api/gopay/${response.order_id}/${response.order_reference}/${response.gtotal}")
+            web_view_pay.loadUrl("https://api.greenhub.shop/api/gopayvisa/${response.order_id}")
         }
         web_view_pay.setWebViewClient(object: WebViewClient() {})
     }

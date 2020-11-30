@@ -115,4 +115,10 @@ Through online chatting on the website</string>
     <string name="delivery_fees">Delivery fees</string>
     <string name="order_id">Order ID#</string>
     <string name="date">Date:</string>
+    <string name="pay_online">Pay Online</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="payment_online">Payment Online</string>
+    <string name="cash_on_delivery">cash_on_delivery</string>
+    <string name="my_orders">My Orders</string>
 </resources>

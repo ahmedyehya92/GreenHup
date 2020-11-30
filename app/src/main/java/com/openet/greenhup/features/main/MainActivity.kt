@@ -20,6 +20,7 @@ import com.openet.entities.KEY_PLANT
 import com.openet.entities.OPEN_CART
 import com.openet.entities.Plant
 import com.openet.greenhup.features.details.PlantDetailsActivity
+import com.openet.greenhup.features.my_orders.MyOrdersActivity
 import com.openet.greenhup.features.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_slide_menu.*
@@ -132,6 +133,7 @@ class MainActivity : BaseActivity(), AdapterSlideMenu.CustomeListener {
         menuItemsList.add(ItemNovigtionMenu(true,getString(R.string.services)))
         menuItemsList.add(ItemNovigtionMenu(true,getString(R.string.contact_us)))
         menuItemsList.add(ItemNovigtionMenu(true,getString(R.string.settings)))
+        menuItemsList.add(ItemNovigtionMenu(true,getString(R.string.my_orders)))
 
         adapterSlideMenuList?.addAll(menuItemsList)
     }
@@ -184,6 +186,7 @@ class MainActivity : BaseActivity(), AdapterSlideMenu.CustomeListener {
                 startActivity(Intent(this, ContactUsActivity::class.java))
             }
             5-> startActivity(Intent(this, SettingsActivity::class.java))
+            6-> startActivity(Intent(this, MyOrdersActivity::class.java))
         }
     }
 

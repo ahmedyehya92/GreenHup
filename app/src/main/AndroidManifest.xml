@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-            android:name="com.openet.greenhup.AfconApp"
+            android:name=".AfconApp"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -15,35 +15,36 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name="com.openet.greenhup.features.settings.SettingsActivity"></activity>
-        <activity android:name="com.openet.greenhup.features.contact_us.ContactUsActivity" />
-        <activity android:name="com.openet.greenhup.features.about.AboutActivity" />
-        <activity android:name="com.openet.greenhup.features.pay.PayActivity" />
-        <activity android:name="com.openet.greenhup.features.save_order.SaveOrderActivity" />
-        <activity android:name="com.openet.greenhup.features.category_products.CategoryProductsActivity" />
+        <activity android:name=".features.my_orders.MyOrdersActivity"></activity>
+        <activity android:name=".features.settings.SettingsActivity" />
+        <activity android:name=".features.contact_us.ContactUsActivity" />
+        <activity android:name=".features.about.AboutActivity" />
+        <activity android:name=".features.pay.PayActivity" />
+        <activity android:name=".features.save_order.SaveOrderActivity" />
+        <activity android:name=".features.category_products.CategoryProductsActivity" />
         <activity
-                android:name="com.openet.greenhup.features.package_details.PackageDetailsActivity"
+                android:name=".features.package_details.PackageDetailsActivity"
                 android:exported="true" />
-        <activity android:name="com.openet.greenhup.features.search.SearchActivity" />
-        <activity android:name="com.openet.greenhup.features.sign.SignActivity" />
-        <activity android:name="com.openet.greenhup.features.on_boarding.OnBoardingActivity" />
-        <activity android:name="com.openet.greenhup.features.service_details.ServiceDetailsActivity" />
-        <activity android:name="com.openet.greenhup.features.services.ServicesActivity" />
+        <activity android:name=".features.search.SearchActivity" />
+        <activity android:name=".features.sign.SignActivity" />
+        <activity android:name=".features.on_boarding.OnBoardingActivity" />
+        <activity android:name=".features.service_details.ServiceDetailsActivity" />
+        <activity android:name=".features.services.ServicesActivity" />
         <activity
-                android:name="com.openet.greenhup.features.categories_vendor.vendors.VendorsActivity"
+                android:name=".features.categories_vendor.vendors.VendorsActivity"
                 android:exported="true" />
         <activity
-                android:name="com.openet.greenhup.features.categories_vendor.CategoriesActivity"
+                android:name=".features.categories_vendor.CategoriesActivity"
                 android:exported="true" />
-        <activity android:name="com.openet.greenhup.features.details.PlantDetailsActivity" />
-        <activity android:name="com.openet.greenhup.features.splash.SplashActivity">
+        <activity android:name=".features.details.PlantDetailsActivity" />
+        <activity android:name=".features.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.openet.greenhup.features.main.MainActivity" />
+        <activity android:name=".features.main.MainActivity" />
     </application>
 
 </manifest>

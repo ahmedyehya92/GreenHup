@@ -26,5 +26,6 @@
     <color name="greyish_brown">#494949</color>
     <color name="battleship_grey">#6d6e7b</color>
     <color name="brownish_grey_two">#707070</color>
+    <color name="blue_text">#147EFB</color>
 
 </resources>

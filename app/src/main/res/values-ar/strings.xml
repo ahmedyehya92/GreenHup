@@ -96,4 +96,10 @@
     <string name="check_your_inbox">سنرسل رسالة البريد الإلكتروني من جرين هب ، بحيث يمكنك البحث عنها بسرعة.فإذا لم تكن في صندوق الوارد، فتحقق من المجلدات الأخرى.</string>
     <string name="delivery_fees">تكلفة الشحن</string>
     <string name="date">Date:</string>
+    <string name="pay_online">Pay Online</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
+    <string name="payment_online">Payment Online</string>
+    <string name="cash_on_delivery">cash_on_delivery</string>
+    <string name="my_orders">My Orders</string>
 </resources>

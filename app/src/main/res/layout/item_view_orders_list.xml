@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        android:layout_margin="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="16dp"
         >
 
 
@@ -52,16 +53,17 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="@string/date"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
+                    app:custom_font="@string/font_muli"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="2020-11-26"
@@ -79,16 +81,17 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="REF.CODE"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_ref_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
+                    app:custom_font="@string/font_muli"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="261515522"
@@ -106,19 +109,30 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="PAID?:"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_is_paid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
-                    android:textSize="13sp"
+                    app:custom_font="@string/font_muli"
                     android:textColor="@color/black_text"
-                    android:text="No Pay Online"
+                    android:layout_marginStart="4dp"
+                    android:text="NO"
+                    />
+
+            <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/btn_pay_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_muli"
+                    android:textSize="13sp"
+                    android:textColor="@color/blue_text"
+                    android:text="@string/pay_online"
                     android:layout_marginStart="8dp"
                     />
 
@@ -133,16 +147,17 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="PAY METHOD?:"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_payment_method"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
+                    app:custom_font="@string/font_muli"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="Cash On Delivery"
@@ -160,16 +175,17 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="TOTAL:"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_total_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
+                    app:custom_font="@string/font_muli"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="KWD 10"
@@ -187,16 +203,17 @@
             <com.openet.greenhup.customviews.CustomeFontTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_bold"
+                    app:custom_font="@string/font_muli_bold"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="STATUS"
                     />
 
             <com.openet.greenhup.customviews.CustomeFontTextView
+                    android:id="@+id/tv_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:custom_font="@string/font_raleway_medium"
+                    app:custom_font="@string/font_muli"
                     android:textSize="13sp"
                     android:textColor="@color/black_text"
                     android:text="Requested"
